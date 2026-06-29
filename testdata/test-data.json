@@ -19,5 +19,11 @@
   },
   "searchWithNoMatchesShowsEmptyStateAndHeaderRemains": {
     "enterUnmatchedQuery": "zzznomatch"
+  },
+  "e2eSalesforceLoginAdminUserManagementDefaultTabVerifyTabsHeaderTableStructureAvatarsRolesStatusesLastActiveAccessTogglesSearchRealTimeCaseInsensitiveEmptyStateScrollabilityAndPagination": {
+    "searchByNameCaseInsensitiveWithUppercaseAlice": "ALICE",
+    "searchByEmail": "inactive@example.com",
+    "enterANonMatchingQueryToTriggerEmptyState": "zzzzzz",
+    "typeSingleCharacterToEnsureFilteringTriggersAt1Chars": "a"
   }
 }

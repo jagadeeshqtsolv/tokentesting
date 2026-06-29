@@ -1,0 +1,396 @@
+{
+  "id": "user-management-comprehensive-e2e",
+  "testPlanId": "e5cfc77f-0719-436d-9869-71cf1f66c4d0",
+  "requirementId": "12806486-6b93-422f-a030-d38607b2cdbd",
+  "suiteName": "Admin - User Management - E2E",
+  "case": {
+    "id": "user-management-comprehensive-e2e",
+    "title": "E2E: Salesforce login → Admin/User Management default tab → verify tabs, header, table structure, avatars, roles, statuses, last active, access toggles, search (real-time, case-insensitive, empty state), scrollability, and pagination",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s01",
+        "action": "openUrl",
+        "targetDescription": "Navigate to base URL (from environment variable)",
+        "value": "${BASE_URL}"
+      },
+      {
+        "id": "s02",
+        "action": "waitForVisible",
+        "targetDescription": "Salesforce login button",
+        "locatorHint": "[data-testid='sf-login-btn']"
+      },
+      {
+        "id": "s03",
+        "action": "tap",
+        "targetDescription": "Click Salesforce login button",
+        "locatorHint": "[data-testid='sf-login-btn']"
+      },
+      {
+        "id": "s04",
+        "action": "waitForVisible",
+        "targetDescription": "Admin page tabs container",
+        "locatorHint": "[data-testid='admin-tabs']"
+      },
+      {
+        "id": "s05",
+        "action": "assertVisible",
+        "targetDescription": "User Management tab is visible and active by default",
+        "locatorHint": "[data-testid='tab-user-management'][role='tab'][aria-selected='true']"
+      },
+      {
+        "id": "s06",
+        "action": "assertVisible",
+        "targetDescription": "Roles & Access tab is visible",
+        "locatorHint": "[data-testid='tab-roles-access'][role='tab']"
+      },
+      {
+        "id": "s07",
+        "action": "assertVisible",
+        "targetDescription": "Audit Log tab is visible",
+        "locatorHint": "[data-testid='tab-audit-log'][role='tab']"
+      },
+      {
+        "id": "s08",
+        "action": "assertVisible",
+        "targetDescription": "Header: N Users label is visible",
+        "locatorHint": "[data-testid='users-count']"
+      },
+      {
+        "id": "s09",
+        "action": "assertContainsText",
+        "targetDescription": "Header: N Users shows 'Users' text",
+        "locatorHint": "[data-testid='users-count']",
+        "assertion": "Users"
+      },
+      {
+        "id": "s10",
+        "action": "assertVisible",
+        "targetDescription": "Header: Search user input visible",
+        "locatorHint": "[data-testid='user-search-input']"
+      },
+      {
+        "id": "s11",
+        "action": "assertVisible",
+        "targetDescription": "Header: Invite user button visible",
+        "locatorHint": "[data-testid='invite-user-btn']"
+      },
+      {
+        "id": "s12",
+        "action": "waitForVisible",
+        "targetDescription": "User table visible",
+        "locatorHint": "[data-testid='user-table']"
+      },
+      {
+        "id": "s13",
+        "action": "assertCount",
+        "targetDescription": "Table has exactly 5 column headers",
+        "locatorHint": "[data-testid='user-table'] thead th"
+      },
+      {
+        "id": "s14",
+        "action": "assertText",
+        "targetDescription": "Header column 1: User information",
+        "locatorHint": "[data-testid='user-table'] thead th:nth-child(1)",
+        "assertion": "User information"
+      },
+      {
+        "id": "s15",
+        "action": "assertText",
+        "targetDescription": "Header column 2: Role",
+        "locatorHint": "[data-testid='user-table'] thead th:nth-child(2)",
+        "assertion": "Role"
+      },
+      {
+        "id": "s16",
+        "action": "assertText",
+        "targetDescription": "Header column 3: Status",
+        "locatorHint": "[data-testid='user-table'] thead th:nth-child(3)",
+        "assertion": "Status"
+      },
+      {
+        "id": "s17",
+        "action": "assertText",
+        "targetDescription": "Header column 4: Last active",
+        "locatorHint": "[data-testid='user-table'] thead th:nth-child(4)",
+        "assertion": "Last active"
+      },
+      {
+        "id": "s18",
+        "action": "assertText",
+        "targetDescription": "Header column 5: Account Access",
+        "locatorHint": "[data-testid='user-table'] thead th:nth-child(5)",
+        "assertion": "Account Access"
+      },
+      {
+        "id": "s19",
+        "action": "assertCountGreaterThan",
+        "targetDescription": "At least 1 user row rendered",
+        "locatorHint": "[data-testid='user-row']"
+      },
+      {
+        "id": "s20",
+        "action": "assertVisible",
+        "targetDescription": "Row with photo avatar present (Alice Admin)",
+        "locatorHint": "[data-testid='user-row'][data-email='alice.admin@example.com']"
+      },
+      {
+        "id": "s21",
+        "action": "assertVisible",
+        "targetDescription": "Alice row has circular photo avatar",
+        "locatorHint": "[data-testid='user-row'][data-email='alice.admin@example.com'] [data-testid='avatar-image']"
+      },
+      {
+        "id": "s22",
+        "action": "assertContainsText",
+        "targetDescription": "Alice row shows full name in User information cell",
+        "locatorHint": "[data-testid='user-row'][data-email='alice.admin@example.com'] [data-testid='cell-user-name']",
+        "assertion": "Alice Admin"
+      },
+      {
+        "id": "s23",
+        "action": "assertContainsText",
+        "targetDescription": "Alice row shows email below the name",
+        "locatorHint": "[data-testid='user-row'][data-email='alice.admin@example.com'] [data-testid='cell-user-email']",
+        "assertion": "alice.admin@example.com"
+      },
+      {
+        "id": "s24",
+        "action": "assertVisible",
+        "targetDescription": "Row with only email (no photo) present",
+        "locatorHint": "[data-testid='user-row'][data-email='onlyemail.user@example.com']"
+      },
+      {
+        "id": "s25",
+        "action": "assertVisible",
+        "targetDescription": "Only-email row shows initials monogram avatar",
+        "locatorHint": "[data-testid='user-row'][data-email='onlyemail.user@example.com'] [data-testid='avatar-monogram']"
+      },
+      {
+        "id": "s26",
+        "action": "assertContainsText",
+        "targetDescription": "Only-email row shows email text",
+        "locatorHint": "[data-testid='user-row'][data-email='onlyemail.user@example.com'] [data-testid='cell-user-email']",
+        "assertion": "onlyemail.user@example.com"
+      },
+      {
+        "id": "s27",
+        "action": "assertContainsText",
+        "targetDescription": "Role cell shows plain text role label (Alice → Admin)",
+        "locatorHint": "[data-testid='user-row'][data-email='alice.admin@example.com'] [data-testid='cell-role']",
+        "assertion": "Admin"
+      },
+      {
+        "id": "s28",
+        "action": "assertCount",
+        "targetDescription": "No role badge styling elements present anywhere",
+        "locatorHint": "[data-testid='role-badge']"
+      },
+      {
+        "id": "s29",
+        "action": "assertContainsText",
+        "targetDescription": "Status badge shows 'Active' for active users (Alice)",
+        "locatorHint": "[data-testid='user-row'][data-email='alice.admin@example.com'] [data-testid='cell-status']",
+        "assertion": "Active"
+      },
+      {
+        "id": "s30",
+        "action": "assertContainsText",
+        "targetDescription": "Status badge shows 'Inactive' for inactive users (Jane)",
+        "locatorHint": "[data-testid='user-row'][data-email='jane.inactive@example.com'] [data-testid='cell-status']",
+        "assertion": "Inactive"
+      },
+      {
+        "id": "s31",
+        "action": "assertContainsText",
+        "targetDescription": "Last active shows human-readable relative time string (e.g., 'ago')",
+        "locatorHint": "[data-testid='user-row'][data-email='alice.admin@example.com'] [data-testid='cell-last-active']",
+        "assertion": "ago"
+      },
+      {
+        "id": "s32",
+        "action": "assertText",
+        "targetDescription": "Never-logged-in user shows 'Never' in Last active",
+        "locatorHint": "[data-testid='user-row'][data-email='new.user@example.com'] [data-testid='cell-last-active']",
+        "assertion": "Never"
+      },
+      {
+        "id": "s33",
+        "action": "assertChecked",
+        "targetDescription": "Account Access toggle ON for active user with access enabled (Alice)",
+        "locatorHint": "[data-testid='user-row'][data-email='alice.admin@example.com'] [data-testid='access-toggle']"
+      },
+      {
+        "id": "s34",
+        "action": "assertUnchecked",
+        "targetDescription": "Account Access toggle OFF for inactive user (Jane)",
+        "locatorHint": "[data-testid='user-row'][data-email='jane.inactive@example.com'] [data-testid='access-toggle']"
+      },
+      {
+        "id": "s35",
+        "action": "assertContainsText",
+        "targetDescription": "Active user with revoked access still shows 'Active' status (Revoked Active)",
+        "locatorHint": "[data-testid='user-row'][data-email='revoked.active@example.com'] [data-testid='cell-status']",
+        "assertion": "Active"
+      },
+      {
+        "id": "s36",
+        "action": "assertUnchecked",
+        "targetDescription": "Toggle OFF for active user with access revoked",
+        "locatorHint": "[data-testid='user-row'][data-email='revoked.active@example.com'] [data-testid='access-toggle']"
+      },
+      {
+        "id": "s37",
+        "action": "assertVisible",
+        "targetDescription": "Logged-in Portal Administrator row is visible",
+        "locatorHint": "[data-testid='user-row'][data-email='portal.admin@example.com']"
+      },
+      {
+        "id": "s38",
+        "action": "assertDisabled",
+        "targetDescription": "Logged-in admin's Account Access toggle is disabled",
+        "locatorHint": "[data-testid='user-row'][data-email='portal.admin@example.com'] [data-testid='access-toggle']"
+      },
+      {
+        "id": "s39",
+        "action": "hover",
+        "targetDescription": "Hover on disabled toggle to reveal tooltip",
+        "locatorHint": "[data-testid='user-row'][data-email='portal.admin@example.com'] [data-testid='access-toggle']"
+      },
+      {
+        "id": "s40",
+        "action": "assertContainsText",
+        "targetDescription": "Tooltip explains self-access cannot be revoked",
+        "locatorHint": "[role='tooltip']",
+        "assertion": "You cannot revoke your own access."
+      },
+      {
+        "id": "s41",
+        "action": "fill",
+        "targetDescription": "Search by name (case-insensitive) with uppercase 'ALICE'",
+        "locatorHint": "[data-testid='user-search-input']",
+        "value": "ALICE"
+      },
+      {
+        "id": "s42",
+        "action": "assertVisible",
+        "targetDescription": "Alice row is visible after case-insensitive search",
+        "locatorHint": "[data-testid='user-row'][data-email='alice.admin@example.com']"
+      },
+      {
+        "id": "s43",
+        "action": "assertHidden",
+        "targetDescription": "Unrelated user (Jane) is filtered out",
+        "locatorHint": "[data-testid='user-row'][data-email='jane.inactive@example.com']"
+      },
+      {
+        "id": "s44",
+        "action": "clear",
+        "targetDescription": "Clear search input",
+        "locatorHint": "[data-testid='user-search-input']"
+      },
+      {
+        "id": "s45",
+        "action": "fill",
+        "targetDescription": "Search by email",
+        "locatorHint": "[data-testid='user-search-input']",
+        "value": "inactive@example.com"
+      },
+      {
+        "id": "s46",
+        "action": "assertVisible",
+        "targetDescription": "Jane row is visible after email search",
+        "locatorHint": "[data-testid='user-row'][data-email='jane.inactive@example.com']"
+      },
+      {
+        "id": "s47",
+        "action": "clear",
+        "targetDescription": "Clear search input",
+        "locatorHint": "[data-testid='user-search-input']"
+      },
+      {
+        "id": "s48",
+        "action": "fill",
+        "targetDescription": "Enter a non-matching query to trigger empty state",
+        "locatorHint": "[data-testid='user-search-input']",
+        "value": "zzzzzz"
+      },
+      {
+        "id": "s49",
+        "action": "assertContainsText",
+        "targetDescription": "Empty state message shows query text",
+        "locatorHint": "[data-testid='table-empty-state']",
+        "assertion": "No users found for 'zzzzzz'."
+      },
+      {
+        "id": "s50",
+        "action": "clear",
+        "targetDescription": "Clear search input",
+        "locatorHint": "[data-testid='user-search-input']"
+      },
+      {
+        "id": "s51",
+        "action": "fill",
+        "targetDescription": "Type single character to ensure filtering triggers at 1+ chars",
+        "locatorHint": "[data-testid='user-search-input']",
+        "value": "a"
+      },
+      {
+        "id": "s52",
+        "action": "assertHidden",
+        "targetDescription": "Empty state not visible for generic single-char query (filter applied with results)",
+        "locatorHint": "[data-testid='table-empty-state']"
+      },
+      {
+        "id": "s53",
+        "action": "clear",
+        "targetDescription": "Reset search input to show full list",
+        "locatorHint": "[data-testid='user-search-input']"
+      },
+      {
+        "id": "s54",
+        "action": "assertCount",
+        "targetDescription": "Pagination page shows exactly 25 rows",
+        "locatorHint": "[data-testid='user-row']"
+      },
+      {
+        "id": "s55",
+        "action": "assertVisible",
+        "targetDescription": "Pagination controls are rendered below the table",
+        "locatorHint": "[data-testid='pagination']"
+      },
+      {
+        "id": "s56",
+        "action": "tap",
+        "targetDescription": "Navigate to page 2 via pagination",
+        "locatorHint": "[data-testid='pagination-page-2']"
+      },
+      {
+        "id": "s57",
+        "action": "waitForVisible",
+        "targetDescription": "Page 2 is current (aria-current='page')",
+        "locatorHint": "[data-testid='pagination-page-2'][aria-current='page']"
+      },
+      {
+        "id": "s58",
+        "action": "assertCount",
+        "targetDescription": "Page 2 also shows 25 rows",
+        "locatorHint": "[data-testid='user-row']"
+      },
+      {
+        "id": "s59",
+        "action": "scrollIntoView",
+        "targetDescription": "Scroll to the last visible user row to verify table scrollability",
+        "locatorHint": "[data-testid='user-row']:last-child"
+      }
+    ],
+    "tags": [
+      "@e2e",
+      "@regression"
+    ]
+  }
+}
