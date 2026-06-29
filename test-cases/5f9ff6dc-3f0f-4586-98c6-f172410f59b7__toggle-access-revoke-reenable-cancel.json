@@ -1,0 +1,132 @@
+{
+  "id": "toggle-access-revoke-reenable-cancel",
+  "testPlanId": "5f9ff6dc-3f0f-4586-98c6-f172410f59b7",
+  "requirementId": "12806486-6b93-422f-a030-d38607b2cdbd",
+  "suiteName": "Admin — User Management — Smoke",
+  "case": {
+    "id": "toggle-access-revoke-reenable-cancel",
+    "title": "Account Access toggle: confirm revoke -> OFF, re-enable -> ON, cancel revoke -> stays ON",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Admin",
+        "value": "https://qa-atlas.qtsolvdev.com/admin"
+      },
+      {
+        "id": "s2",
+        "action": "tap",
+        "targetDescription": "Salesforce login button",
+        "locatorHint": "text=Salesforce login"
+      },
+      {
+        "id": "s3",
+        "action": "fill",
+        "targetDescription": "Search for a known active user",
+        "locatorHint": "input[placeholder='Search user']",
+        "value": "testuserinvite1"
+      },
+      {
+        "id": "s4",
+        "action": "waitForVisible",
+        "targetDescription": "Row for testuserinvite1 appears",
+        "locatorHint": "tbody tr:has-text('testuserinvite1')"
+      },
+      {
+        "id": "s5",
+        "action": "assertChecked",
+        "targetDescription": "Access toggle is ON for the user",
+        "locatorHint": "tbody tr:has-text('testuserinvite1') [role='switch'], tbody tr:has-text('testuserinvite1') input[type=checkbox]"
+      },
+      {
+        "id": "s6",
+        "action": "tap",
+        "targetDescription": "Click ON toggle to revoke",
+        "locatorHint": "tbody tr:has-text('testuserinvite1') [role='switch'], tbody tr:has-text('testuserinvite1') input[type=checkbox]"
+      },
+      {
+        "id": "s7",
+        "action": "assertVisible",
+        "targetDescription": "Confirmation dialog title",
+        "locatorHint": "[role=dialog]",
+        "assertion": "Revoke access?"
+      },
+      {
+        "id": "s8",
+        "action": "assertContainsText",
+        "targetDescription": "Confirmation message body",
+        "locatorHint": "[role=dialog]",
+        "assertion": "This will prevent"
+      },
+      {
+        "id": "s9",
+        "action": "tap",
+        "targetDescription": "Confirm Revoke",
+        "locatorHint": "[role=dialog] button:has-text('Revoke')"
+      },
+      {
+        "id": "s10",
+        "action": "waitForHidden",
+        "targetDescription": "Dialog closed",
+        "locatorHint": "[role=dialog]"
+      },
+      {
+        "id": "s11",
+        "action": "assertUnchecked",
+        "targetDescription": "Toggle is now OFF",
+        "locatorHint": "tbody tr:has-text('testuserinvite1') [role='switch'], tbody tr:has-text('testuserinvite1') input[type=checkbox]"
+      },
+      {
+        "id": "s12",
+        "action": "tap",
+        "targetDescription": "Click OFF toggle to re-enable (no dialog)",
+        "locatorHint": "tbody tr:has-text('testuserinvite1') [role='switch'], tbody tr:has-text('testuserinvite1') input[type=checkbox]"
+      },
+      {
+        "id": "s13",
+        "action": "assertChecked",
+        "targetDescription": "Toggle is ON again",
+        "locatorHint": "tbody tr:has-text('testuserinvite1') [role='switch'], tbody tr:has-text('testuserinvite1') input[type=checkbox]"
+      },
+      {
+        "id": "s14",
+        "action": "tap",
+        "targetDescription": "Attempt revoke again to test Cancel",
+        "locatorHint": "tbody tr:has-text('testuserinvite1') [role='switch'], tbody tr:has-text('testuserinvite1') input[type=checkbox]"
+      },
+      {
+        "id": "s15",
+        "action": "waitForVisible",
+        "targetDescription": "Confirmation dialog appears",
+        "locatorHint": "[role=dialog]"
+      },
+      {
+        "id": "s16",
+        "action": "tap",
+        "targetDescription": "Cancel revocation",
+        "locatorHint": "[role=dialog] button:has-text('Cancel')"
+      },
+      {
+        "id": "s17",
+        "action": "waitForHidden",
+        "targetDescription": "Dialog closed",
+        "locatorHint": "[role=dialog]"
+      },
+      {
+        "id": "s18",
+        "action": "assertChecked",
+        "targetDescription": "Toggle remains ON after Cancel",
+        "locatorHint": "tbody tr:has-text('testuserinvite1') [role='switch'], tbody tr:has-text('testuserinvite1') input[type=checkbox]"
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}

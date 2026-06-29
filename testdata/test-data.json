@@ -1,1 +1,14 @@
-{}
+{
+  "searchFiltersUsersCaseInsensitivelyAfter1CharacterWithoutChangingNUsersLabel": {
+    "typeUppercaseToTestCaseInsensitiveMatch": "TESTUSERINVITE1"
+  },
+  "searchWithNoResultsShowsEmptyStateMessageAndKeepsHeaderVisible": {
+    "typeANonMatchingQuery": "zzznomatch"
+  },
+  "accountAccessToggleConfirmRevokeOffReEnableOnCancelRevokeStaysOn": {
+    "searchForAKnownActiveUser": "testuserinvite1"
+  },
+  "changingSearchQueryResetsPaginationToPage1": {
+    "type1CharacterQueryToChangeSearch": "a"
+  }
+}

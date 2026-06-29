@@ -1,0 +1,65 @@
+{
+  "id": "search-filters-case-insensitive",
+  "testPlanId": "5f9ff6dc-3f0f-4586-98c6-f172410f59b7",
+  "requirementId": "12806486-6b93-422f-a030-d38607b2cdbd",
+  "suiteName": "Admin — User Management — Smoke",
+  "case": {
+    "id": "search-filters-case-insensitive",
+    "title": "Search filters users case-insensitively after 1+ character without changing N Users label",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Admin",
+        "value": "https://qa-atlas.qtsolvdev.com/admin"
+      },
+      {
+        "id": "s2",
+        "action": "tap",
+        "targetDescription": "Salesforce login button",
+        "locatorHint": "text=Salesforce login"
+      },
+      {
+        "id": "s3",
+        "action": "waitForVisible",
+        "targetDescription": "Search input",
+        "locatorHint": "input[placeholder='Search user']"
+      },
+      {
+        "id": "s4",
+        "action": "fill",
+        "targetDescription": "Type uppercase to test case-insensitive match",
+        "locatorHint": "input[placeholder='Search user']",
+        "value": "TESTUSERINVITE1"
+      },
+      {
+        "id": "s5",
+        "action": "waitForVisible",
+        "targetDescription": "Table body updates",
+        "locatorHint": "tbody"
+      },
+      {
+        "id": "s6",
+        "action": "assertCountGreaterThan",
+        "targetDescription": "At least one matching row is shown",
+        "locatorHint": "tbody tr"
+      },
+      {
+        "id": "s7",
+        "action": "assertContainsText",
+        "targetDescription": "N Users label remains present (unchanged total indicator)",
+        "locatorHint": "[data-testid=user-count]",
+        "assertion": "Users"
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}

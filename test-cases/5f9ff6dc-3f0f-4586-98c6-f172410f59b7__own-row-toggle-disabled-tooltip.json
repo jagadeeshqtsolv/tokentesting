@@ -1,0 +1,58 @@
+{
+  "id": "own-row-toggle-disabled-tooltip",
+  "testPlanId": "5f9ff6dc-3f0f-4586-98c6-f172410f59b7",
+  "requirementId": "12806486-6b93-422f-a030-d38607b2cdbd",
+  "suiteName": "Admin — User Management — Smoke",
+  "case": {
+    "id": "own-row-toggle-disabled-tooltip",
+    "title": "Admin's own row has disabled toggle and tooltip on hover",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Admin",
+        "value": "https://qa-atlas.qtsolvdev.com/admin"
+      },
+      {
+        "id": "s2",
+        "action": "tap",
+        "targetDescription": "Salesforce login button",
+        "locatorHint": "text=Salesforce login"
+      },
+      {
+        "id": "s3",
+        "action": "waitForVisible",
+        "targetDescription": "User table visible",
+        "locatorHint": "table:has(thead)"
+      },
+      {
+        "id": "s4",
+        "action": "hover",
+        "targetDescription": "Hover disabled Account Access toggle in admin's own row",
+        "locatorHint": "tbody tr:has([data-testid=self-indicator]) [data-testid=access-toggle][disabled], tbody tr:has-text('(You)') [data-testid=access-toggle][disabled]"
+      },
+      {
+        "id": "s5",
+        "action": "assertDisabled",
+        "targetDescription": "Own toggle is non-interactive",
+        "locatorHint": "tbody tr:has([data-testid=self-indicator]) [data-testid=access-toggle], tbody tr:has-text('(You)') [data-testid=access-toggle]"
+      },
+      {
+        "id": "s6",
+        "action": "assertVisible",
+        "targetDescription": "Tooltip text shown on hover",
+        "locatorHint": "[role=tooltip]",
+        "assertion": "You cannot revoke your own access."
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}
