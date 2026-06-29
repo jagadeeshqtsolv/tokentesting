@@ -1,0 +1,40 @@
+{
+  "id": "enable-access",
+  "testPlanId": "1e399e6b-cc7f-4522-ad72-67673f3a3181",
+  "requirementId": "12806486-6b93-422f-a030-d38607b2cdbd",
+  "suiteName": "Admin User Management Smoke Test",
+  "case": {
+    "id": "enable-access",
+    "title": "Flow 6 — Re-enable access",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to the admin page",
+        "value": "https://qa-atlas.qtsolvdev.com/admin"
+      },
+      {
+        "id": "step2",
+        "action": "tap",
+        "targetDescription": "Click the OFF toggle for a previously active user",
+        "locatorHint": "toggle for user in OFF state (grey/OFF)"
+      },
+      {
+        "id": "step3",
+        "action": "assertVisible",
+        "targetDescription": "Verify the toggle changes immediately to ON (teal)",
+        "locatorHint": "toggle for user",
+        "assertion": "ON"
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}

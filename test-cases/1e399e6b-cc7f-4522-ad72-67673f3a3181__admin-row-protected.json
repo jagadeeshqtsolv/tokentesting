@@ -1,0 +1,53 @@
+{
+  "id": "admin-row-protected",
+  "testPlanId": "1e399e6b-cc7f-4522-ad72-67673f3a3181",
+  "requirementId": "12806486-6b93-422f-a030-d38607b2cdbd",
+  "suiteName": "Admin User Management Smoke Test",
+  "case": {
+    "id": "admin-row-protected",
+    "title": "Flow 7 — Admin's own row is protected",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to the admin page",
+        "value": "https://qa-atlas.qtsolvdev.com/admin"
+      },
+      {
+        "id": "step2",
+        "action": "assertVisible",
+        "targetDescription": "Verify the logged-in admin's row is visible in the table",
+        "locatorHint": "table row for admin",
+        "assertion": "Admin"
+      },
+      {
+        "id": "step3",
+        "action": "assertDisabled",
+        "targetDescription": "Verify the admin's Account Access toggle is disabled",
+        "locatorHint": "toggle for admin user"
+      },
+      {
+        "id": "step4",
+        "action": "hover",
+        "targetDescription": "Hover over the admin's disabled toggle",
+        "locatorHint": "toggle for admin user"
+      },
+      {
+        "id": "step5",
+        "action": "assertVisible",
+        "targetDescription": "Verify tooltip 'You cannot revoke your own access.' is displayed",
+        "locatorHint": "tooltip element",
+        "assertion": "You cannot revoke your own access."
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}

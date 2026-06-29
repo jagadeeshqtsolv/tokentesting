@@ -1,0 +1,52 @@
+{
+  "id": "cancel-revoke",
+  "testPlanId": "1e399e6b-cc7f-4522-ad72-67673f3a3181",
+  "requirementId": "12806486-6b93-422f-a030-d38607b2cdbd",
+  "suiteName": "Admin User Management Smoke Test",
+  "case": {
+    "id": "cancel-revoke",
+    "title": "Flow 5 — Cancel access revocation",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to the admin page",
+        "value": "https://qa-atlas.qtsolvdev.com/admin"
+      },
+      {
+        "id": "step2",
+        "action": "tap",
+        "targetDescription": "Click the active user's Account Access toggle (ON state)",
+        "locatorHint": "toggle for active user (teal/ON)"
+      },
+      {
+        "id": "step3",
+        "action": "assertVisible",
+        "targetDescription": "Verify confirmation dialog appears",
+        "locatorHint": "dialog containing 'Revoke access?'"
+      },
+      {
+        "id": "step4",
+        "action": "tap",
+        "targetDescription": "Click the 'Cancel' button in the dialog",
+        "locatorHint": "button with text 'Cancel'"
+      },
+      {
+        "id": "step5",
+        "action": "assertVisible",
+        "targetDescription": "Verify the toggle remains ON",
+        "locatorHint": "toggle for active user",
+        "assertion": "ON"
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}

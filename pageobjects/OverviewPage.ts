@@ -104,32 +104,96 @@ export class OverviewPage {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.goodNightEmma));
   }
 
-  async expectGoodNightEmmaVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.goodNightEmma), timeoutMs, soft);
+  async expectGoodNightEmmaVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.goodNightEmma), timeoutMs);
+  }
+
+  async expectGoodNightEmmaHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.goodNightEmma), timeoutMs);
+  }
+
+  async expectGoodNightEmmaText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.goodNightEmma), expected, timeoutMs);
+  }
+
+  async expectGoodNightEmmaContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.goodNightEmma), substring, timeoutMs);
+  }
+
+  async scrollGoodNightEmmaIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.goodNightEmma));
   }
 
   async getInnerTextOverviewAskUkgAssist(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.overviewAskUkgAssist));
   }
 
-  async expectOverviewAskUkgAssistVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.overviewAskUkgAssist), timeoutMs, soft);
+  async expectOverviewAskUkgAssistVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.overviewAskUkgAssist), timeoutMs);
+  }
+
+  async expectOverviewAskUkgAssistHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.overviewAskUkgAssist), timeoutMs);
+  }
+
+  async expectOverviewAskUkgAssistText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.overviewAskUkgAssist), expected, timeoutMs);
+  }
+
+  async expectOverviewAskUkgAssistContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.overviewAskUkgAssist), substring, timeoutMs);
+  }
+
+  async scrollOverviewAskUkgAssistIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.overviewAskUkgAssist));
   }
 
   async getInnerTextExpirationAhead(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.expirationAhead));
   }
 
-  async expectExpirationAheadVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.expirationAhead), timeoutMs, soft);
+  async expectExpirationAheadVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.expirationAhead), timeoutMs);
+  }
+
+  async expectExpirationAheadHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.expirationAhead), timeoutMs);
+  }
+
+  async expectExpirationAheadText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.expirationAhead), expected, timeoutMs);
+  }
+
+  async expectExpirationAheadContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.expirationAhead), substring, timeoutMs);
+  }
+
+  async scrollExpirationAheadIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.expirationAhead));
   }
 
   async getInnerTextUkgProSubscriptionIs(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.ukgProSubscriptionIs));
   }
 
-  async expectUkgProSubscriptionIsVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.ukgProSubscriptionIs), timeoutMs, soft);
+  async expectUkgProSubscriptionIsVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.ukgProSubscriptionIs), timeoutMs);
+  }
+
+  async expectUkgProSubscriptionIsHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.ukgProSubscriptionIs), timeoutMs);
+  }
+
+  async expectUkgProSubscriptionIsText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.ukgProSubscriptionIs), expected, timeoutMs);
+  }
+
+  async expectUkgProSubscriptionIsContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.ukgProSubscriptionIs), substring, timeoutMs);
+  }
+
+  async scrollUkgProSubscriptionIsIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.ukgProSubscriptionIs));
   }
 
   async clickRenewSubscription(): Promise<void> {
@@ -140,16 +204,56 @@ export class OverviewPage {
     await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.renewSubscription));
   }
 
-  async expectRenewSubscriptionVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.renewSubscription), timeoutMs, soft);
+  async expectRenewSubscriptionVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.renewSubscription), timeoutMs);
+  }
+
+  async expectRenewSubscriptionHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.renewSubscription), timeoutMs);
+  }
+
+  async expectRenewSubscriptionEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, OverviewPage.L.renewSubscription), timeoutMs);
+  }
+
+  async expectRenewSubscriptionDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, OverviewPage.L.renewSubscription), timeoutMs);
+  }
+
+  async expectRenewSubscriptionText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.renewSubscription), expected, timeoutMs);
+  }
+
+  async expectRenewSubscriptionContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.renewSubscription), substring, timeoutMs);
+  }
+
+  async scrollRenewSubscriptionIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.renewSubscription));
   }
 
   async getInnerTextElement(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.element));
   }
 
-  async expectElementVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.element), timeoutMs, soft);
+  async expectElementVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.element), timeoutMs);
+  }
+
+  async expectElementHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.element), timeoutMs);
+  }
+
+  async expectElementText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.element), expected, timeoutMs);
+  }
+
+  async expectElementContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.element), substring, timeoutMs);
+  }
+
+  async scrollElementIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.element));
   }
 
   async clickPreviousAlert(): Promise<void> {
@@ -160,8 +264,32 @@ export class OverviewPage {
     await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.previousAlert));
   }
 
-  async expectPreviousAlertVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.previousAlert), timeoutMs, soft);
+  async expectPreviousAlertVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.previousAlert), timeoutMs);
+  }
+
+  async expectPreviousAlertHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.previousAlert), timeoutMs);
+  }
+
+  async expectPreviousAlertEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, OverviewPage.L.previousAlert), timeoutMs);
+  }
+
+  async expectPreviousAlertDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, OverviewPage.L.previousAlert), timeoutMs);
+  }
+
+  async expectPreviousAlertText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.previousAlert), expected, timeoutMs);
+  }
+
+  async expectPreviousAlertContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.previousAlert), substring, timeoutMs);
+  }
+
+  async scrollPreviousAlertIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.previousAlert));
   }
 
   async clickNextAlert(): Promise<void> {
@@ -172,8 +300,32 @@ export class OverviewPage {
     await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.nextAlert));
   }
 
-  async expectNextAlertVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.nextAlert), timeoutMs, soft);
+  async expectNextAlertVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.nextAlert), timeoutMs);
+  }
+
+  async expectNextAlertHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.nextAlert), timeoutMs);
+  }
+
+  async expectNextAlertEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, OverviewPage.L.nextAlert), timeoutMs);
+  }
+
+  async expectNextAlertDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, OverviewPage.L.nextAlert), timeoutMs);
+  }
+
+  async expectNextAlertText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.nextAlert), expected, timeoutMs);
+  }
+
+  async expectNextAlertContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.nextAlert), substring, timeoutMs);
+  }
+
+  async scrollNextAlertIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.nextAlert));
   }
 
   async clickCloseAlerts(): Promise<void> {
@@ -184,8 +336,32 @@ export class OverviewPage {
     await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.closeAlerts));
   }
 
-  async expectCloseAlertsVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.closeAlerts), timeoutMs, soft);
+  async expectCloseAlertsVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.closeAlerts), timeoutMs);
+  }
+
+  async expectCloseAlertsHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.closeAlerts), timeoutMs);
+  }
+
+  async expectCloseAlertsEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, OverviewPage.L.closeAlerts), timeoutMs);
+  }
+
+  async expectCloseAlertsDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, OverviewPage.L.closeAlerts), timeoutMs);
+  }
+
+  async expectCloseAlertsText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.closeAlerts), expected, timeoutMs);
+  }
+
+  async expectCloseAlertsContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.closeAlerts), substring, timeoutMs);
+  }
+
+  async scrollCloseAlertsIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.closeAlerts));
   }
 
   async fillMessageUkgAssist(value: string): Promise<void> {
@@ -196,12 +372,36 @@ export class OverviewPage {
     await clearWhenVisible(webLocator(this.page, OverviewPage.L.messageUkgAssist));
   }
 
-  async getMessageUkgAssistValue(): Promise<string> {
-    return getTextWhenVisible(webLocator(this.page, OverviewPage.L.messageUkgAssist));
+  async typeTextMessageUkgAssist(value: string): Promise<void> {
+    await typeTextWhenVisible(webLocator(this.page, OverviewPage.L.messageUkgAssist), value);
   }
 
-  async expectMessageUkgAssistVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.messageUkgAssist), timeoutMs, soft);
+  async expectMessageUkgAssistVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.messageUkgAssist), timeoutMs);
+  }
+
+  async expectMessageUkgAssistHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.messageUkgAssist), timeoutMs);
+  }
+
+  async expectMessageUkgAssistEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, OverviewPage.L.messageUkgAssist), timeoutMs);
+  }
+
+  async expectMessageUkgAssistDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, OverviewPage.L.messageUkgAssist), timeoutMs);
+  }
+
+  async expectMessageUkgAssistValue(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectValue(webLocator(this.page, OverviewPage.L.messageUkgAssist), expected, timeoutMs);
+  }
+
+  async expectMessageUkgAssistFocused(timeoutMs = 30_000): Promise<void> {
+    await expectFocused(webLocator(this.page, OverviewPage.L.messageUkgAssist), timeoutMs);
+  }
+
+  async scrollMessageUkgAssistIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.messageUkgAssist));
   }
 
   async clickSendMessage(): Promise<void> {
@@ -212,32 +412,104 @@ export class OverviewPage {
     await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.sendMessage));
   }
 
-  async expectSendMessageVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.sendMessage), timeoutMs, soft);
+  async expectSendMessageVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.sendMessage), timeoutMs);
+  }
+
+  async expectSendMessageHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.sendMessage), timeoutMs);
+  }
+
+  async expectSendMessageEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, OverviewPage.L.sendMessage), timeoutMs);
+  }
+
+  async expectSendMessageDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, OverviewPage.L.sendMessage), timeoutMs);
+  }
+
+  async expectSendMessageText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.sendMessage), expected, timeoutMs);
+  }
+
+  async expectSendMessageContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.sendMessage), substring, timeoutMs);
+  }
+
+  async scrollSendMessageIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.sendMessage));
   }
 
   async getInnerTextAiSummary(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.aiSummary));
   }
 
-  async expectAiSummaryVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.aiSummary), timeoutMs, soft);
+  async expectAiSummaryVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.aiSummary), timeoutMs);
+  }
+
+  async expectAiSummaryHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.aiSummary), timeoutMs);
+  }
+
+  async expectAiSummaryText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.aiSummary), expected, timeoutMs);
+  }
+
+  async expectAiSummaryContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.aiSummary), substring, timeoutMs);
+  }
+
+  async scrollAiSummaryIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.aiSummary));
   }
 
   async getInnerTextBeta(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.beta));
   }
 
-  async expectBetaVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.beta), timeoutMs, soft);
+  async expectBetaVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.beta), timeoutMs);
+  }
+
+  async expectBetaHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.beta), timeoutMs);
+  }
+
+  async expectBetaText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.beta), expected, timeoutMs);
+  }
+
+  async expectBetaContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.beta), substring, timeoutMs);
+  }
+
+  async scrollBetaIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.beta));
   }
 
   async getInnerTextWasThisHelpful(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.wasThisHelpful));
   }
 
-  async expectWasThisHelpfulVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.wasThisHelpful), timeoutMs, soft);
+  async expectWasThisHelpfulVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.wasThisHelpful), timeoutMs);
+  }
+
+  async expectWasThisHelpfulHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.wasThisHelpful), timeoutMs);
+  }
+
+  async expectWasThisHelpfulText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.wasThisHelpful), expected, timeoutMs);
+  }
+
+  async expectWasThisHelpfulContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.wasThisHelpful), substring, timeoutMs);
+  }
+
+  async scrollWasThisHelpfulIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.wasThisHelpful));
   }
 
   async clickHelpful(): Promise<void> {
@@ -248,8 +520,32 @@ export class OverviewPage {
     await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.helpful));
   }
 
-  async expectHelpfulVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.helpful), timeoutMs, soft);
+  async expectHelpfulVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.helpful), timeoutMs);
+  }
+
+  async expectHelpfulHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.helpful), timeoutMs);
+  }
+
+  async expectHelpfulEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, OverviewPage.L.helpful), timeoutMs);
+  }
+
+  async expectHelpfulDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, OverviewPage.L.helpful), timeoutMs);
+  }
+
+  async expectHelpfulText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.helpful), expected, timeoutMs);
+  }
+
+  async expectHelpfulContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.helpful), substring, timeoutMs);
+  }
+
+  async scrollHelpfulIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.helpful));
   }
 
   async clickNotHelpful(): Promise<void> {
@@ -260,40 +556,128 @@ export class OverviewPage {
     await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.notHelpful));
   }
 
-  async expectNotHelpfulVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.notHelpful), timeoutMs, soft);
+  async expectNotHelpfulVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.notHelpful), timeoutMs);
+  }
+
+  async expectNotHelpfulHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.notHelpful), timeoutMs);
+  }
+
+  async expectNotHelpfulEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, OverviewPage.L.notHelpful), timeoutMs);
+  }
+
+  async expectNotHelpfulDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, OverviewPage.L.notHelpful), timeoutMs);
+  }
+
+  async expectNotHelpfulText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.notHelpful), expected, timeoutMs);
+  }
+
+  async expectNotHelpfulContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.notHelpful), substring, timeoutMs);
+  }
+
+  async scrollNotHelpfulIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.notHelpful));
   }
 
   async getInnerTextAcmeCorpSAccountCarries(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.acmeCorpSAccountCarries));
   }
 
-  async expectAcmeCorpSAccountCarriesVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.acmeCorpSAccountCarries), timeoutMs, soft);
+  async expectAcmeCorpSAccountCarriesVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.acmeCorpSAccountCarries), timeoutMs);
+  }
+
+  async expectAcmeCorpSAccountCarriesHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.acmeCorpSAccountCarries), timeoutMs);
+  }
+
+  async expectAcmeCorpSAccountCarriesText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.acmeCorpSAccountCarries), expected, timeoutMs);
+  }
+
+  async expectAcmeCorpSAccountCarriesContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.acmeCorpSAccountCarries), substring, timeoutMs);
+  }
+
+  async scrollAcmeCorpSAccountCarriesIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.acmeCorpSAccountCarries));
   }
 
   async getInnerTextElevatedRisk(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.elevatedRisk));
   }
 
-  async expectElevatedRiskVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.elevatedRisk), timeoutMs, soft);
+  async expectElevatedRiskVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.elevatedRisk), timeoutMs);
+  }
+
+  async expectElevatedRiskHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.elevatedRisk), timeoutMs);
+  }
+
+  async expectElevatedRiskText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.elevatedRisk), expected, timeoutMs);
+  }
+
+  async expectElevatedRiskContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.elevatedRisk), substring, timeoutMs);
+  }
+
+  async scrollElevatedRiskIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.elevatedRisk));
   }
 
   async getInnerTextBackgroundRisk(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.backgroundRisk));
   }
 
-  async expectBackgroundRiskVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.backgroundRisk), timeoutMs, soft);
+  async expectBackgroundRiskVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.backgroundRisk), timeoutMs);
+  }
+
+  async expectBackgroundRiskHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.backgroundRisk), timeoutMs);
+  }
+
+  async expectBackgroundRiskText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.backgroundRisk), expected, timeoutMs);
+  }
+
+  async expectBackgroundRiskContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.backgroundRisk), substring, timeoutMs);
+  }
+
+  async scrollBackgroundRiskIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.backgroundRisk));
   }
 
   async getInnerTextNotYetCriticalBut(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.notYetCriticalBut));
   }
 
-  async expectNotYetCriticalButVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.notYetCriticalBut), timeoutMs, soft);
+  async expectNotYetCriticalButVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.notYetCriticalBut), timeoutMs);
+  }
+
+  async expectNotYetCriticalButHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.notYetCriticalBut), timeoutMs);
+  }
+
+  async expectNotYetCriticalButText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.notYetCriticalBut), expected, timeoutMs);
+  }
+
+  async expectNotYetCriticalButContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.notYetCriticalBut), substring, timeoutMs);
+  }
+
+  async scrollNotYetCriticalButIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.notYetCriticalBut));
   }
 
   async clickSeeMore(): Promise<void> {
@@ -304,16 +688,56 @@ export class OverviewPage {
     await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.seeMore));
   }
 
-  async expectSeeMoreVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.seeMore), timeoutMs, soft);
+  async expectSeeMoreVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.seeMore), timeoutMs);
+  }
+
+  async expectSeeMoreHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.seeMore), timeoutMs);
+  }
+
+  async expectSeeMoreEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, OverviewPage.L.seeMore), timeoutMs);
+  }
+
+  async expectSeeMoreDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, OverviewPage.L.seeMore), timeoutMs);
+  }
+
+  async expectSeeMoreText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.seeMore), expected, timeoutMs);
+  }
+
+  async expectSeeMoreContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.seeMore), substring, timeoutMs);
+  }
+
+  async scrollSeeMoreIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.seeMore));
   }
 
   async getInnerTextSynthesisedFromPortalActivity(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.synthesisedFromPortalActivity));
   }
 
-  async expectSynthesisedFromPortalActivityVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.synthesisedFromPortalActivity), timeoutMs, soft);
+  async expectSynthesisedFromPortalActivityVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.synthesisedFromPortalActivity), timeoutMs);
+  }
+
+  async expectSynthesisedFromPortalActivityHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.synthesisedFromPortalActivity), timeoutMs);
+  }
+
+  async expectSynthesisedFromPortalActivityText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.synthesisedFromPortalActivity), expected, timeoutMs);
+  }
+
+  async expectSynthesisedFromPortalActivityContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.synthesisedFromPortalActivity), substring, timeoutMs);
+  }
+
+  async scrollSynthesisedFromPortalActivityIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.synthesisedFromPortalActivity));
   }
 
   async clickViewDetails(): Promise<void> {
@@ -324,176 +748,548 @@ export class OverviewPage {
     await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.viewDetails));
   }
 
-  async expectViewDetailsVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.viewDetails), timeoutMs, soft);
+  async expectViewDetailsVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.viewDetails), timeoutMs);
+  }
+
+  async expectViewDetailsHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.viewDetails), timeoutMs);
+  }
+
+  async expectViewDetailsEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, OverviewPage.L.viewDetails), timeoutMs);
+  }
+
+  async expectViewDetailsDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, OverviewPage.L.viewDetails), timeoutMs);
+  }
+
+  async expectViewDetailsText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.viewDetails), expected, timeoutMs);
+  }
+
+  async expectViewDetailsContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.viewDetails), substring, timeoutMs);
+  }
+
+  async scrollViewDetailsIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.viewDetails));
   }
 
   async getInnerTextCaseOpen(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.caseOpen));
   }
 
-  async expectCaseOpenVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.caseOpen), timeoutMs, soft);
+  async expectCaseOpenVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.caseOpen), timeoutMs);
+  }
+
+  async expectCaseOpenHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.caseOpen), timeoutMs);
+  }
+
+  async expectCaseOpenText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.caseOpen), expected, timeoutMs);
+  }
+
+  async expectCaseOpenContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.caseOpen), substring, timeoutMs);
+  }
+
+  async scrollCaseOpenIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.caseOpen));
   }
 
   async getInnerTextHighPriorityAwaiting(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.highPriorityAwaiting));
   }
 
-  async expectHighPriorityAwaitingVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.highPriorityAwaiting), timeoutMs, soft);
+  async expectHighPriorityAwaitingVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.highPriorityAwaiting), timeoutMs);
+  }
+
+  async expectHighPriorityAwaitingHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.highPriorityAwaiting), timeoutMs);
+  }
+
+  async expectHighPriorityAwaitingText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.highPriorityAwaiting), expected, timeoutMs);
+  }
+
+  async expectHighPriorityAwaitingContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.highPriorityAwaiting), substring, timeoutMs);
+  }
+
+  async scrollHighPriorityAwaitingIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.highPriorityAwaiting));
   }
 
   async getInnerTextBilling(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.billing));
   }
 
-  async expectBillingVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.billing), timeoutMs, soft);
+  async expectBillingVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.billing), timeoutMs);
+  }
+
+  async expectBillingHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.billing), timeoutMs);
+  }
+
+  async expectBillingText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.billing), expected, timeoutMs);
+  }
+
+  async expectBillingContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.billing), substring, timeoutMs);
+  }
+
+  async scrollBillingIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.billing));
   }
 
   async getInnerTextOverdue(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.overdue));
   }
 
-  async expectOverdueVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.overdue), timeoutMs, soft);
+  async expectOverdueVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.overdue), timeoutMs);
+  }
+
+  async expectOverdueHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.overdue), timeoutMs);
+  }
+
+  async expectOverdueText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.overdue), expected, timeoutMs);
+  }
+
+  async expectOverdueContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.overdue), substring, timeoutMs);
+  }
+
+  async scrollOverdueIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.overdue));
   }
 
   async getInnerTextPastDue1(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.pastDue1));
   }
 
-  async expectPastDue1Visible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.pastDue1), timeoutMs, soft);
+  async expectPastDue1Visible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.pastDue1), timeoutMs);
+  }
+
+  async expectPastDue1Hidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.pastDue1), timeoutMs);
+  }
+
+  async expectPastDue1Text(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.pastDue1), expected, timeoutMs);
+  }
+
+  async expectPastDue1ContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.pastDue1), substring, timeoutMs);
+  }
+
+  async scrollPastDue1IntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.pastDue1));
   }
 
   async getInnerTextRenewal(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.renewal));
   }
 
-  async expectRenewalVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.renewal), timeoutMs, soft);
+  async expectRenewalVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.renewal), timeoutMs);
+  }
+
+  async expectRenewalHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.renewal), timeoutMs);
+  }
+
+  async expectRenewalText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.renewal), expected, timeoutMs);
+  }
+
+  async expectRenewalContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.renewal), substring, timeoutMs);
+  }
+
+  async scrollRenewalIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.renewal));
   }
 
   async getInnerTextDimensionsIn8d(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.dimensionsIn8d));
   }
 
-  async expectDimensionsIn8dVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.dimensionsIn8d), timeoutMs, soft);
+  async expectDimensionsIn8dVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.dimensionsIn8d), timeoutMs);
+  }
+
+  async expectDimensionsIn8dHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.dimensionsIn8d), timeoutMs);
+  }
+
+  async expectDimensionsIn8dText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.dimensionsIn8d), expected, timeoutMs);
+  }
+
+  async expectDimensionsIn8dContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.dimensionsIn8d), substring, timeoutMs);
+  }
+
+  async scrollDimensionsIn8dIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.dimensionsIn8d));
   }
 
   async getInnerTextInsightsRecommendations(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.insightsRecommendations));
   }
 
-  async expectInsightsRecommendationsVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.insightsRecommendations), timeoutMs, soft);
+  async expectInsightsRecommendationsVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.insightsRecommendations), timeoutMs);
+  }
+
+  async expectInsightsRecommendationsHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.insightsRecommendations), timeoutMs);
+  }
+
+  async expectInsightsRecommendationsText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.insightsRecommendations), expected, timeoutMs);
+  }
+
+  async expectInsightsRecommendationsContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.insightsRecommendations), substring, timeoutMs);
+  }
+
+  async scrollInsightsRecommendationsIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.insightsRecommendations));
   }
 
   async getInnerTextPrioritisedActionsFromYour(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.prioritisedActionsFromYour));
   }
 
-  async expectPrioritisedActionsFromYourVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.prioritisedActionsFromYour), timeoutMs, soft);
+  async expectPrioritisedActionsFromYourVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.prioritisedActionsFromYour), timeoutMs);
+  }
+
+  async expectPrioritisedActionsFromYourHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.prioritisedActionsFromYour), timeoutMs);
+  }
+
+  async expectPrioritisedActionsFromYourText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.prioritisedActionsFromYour), expected, timeoutMs);
+  }
+
+  async expectPrioritisedActionsFromYourContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.prioritisedActionsFromYour), substring, timeoutMs);
+  }
+
+  async scrollPrioritisedActionsFromYourIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.prioritisedActionsFromYour));
   }
 
   async getInnerTextMediumImpact(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.mediumImpact));
   }
 
-  async expectMediumImpactVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.mediumImpact), timeoutMs, soft);
+  async expectMediumImpactVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.mediumImpact), timeoutMs);
+  }
+
+  async expectMediumImpactHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.mediumImpact), timeoutMs);
+  }
+
+  async expectMediumImpactText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.mediumImpact), expected, timeoutMs);
+  }
+
+  async expectMediumImpactContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.mediumImpact), substring, timeoutMs);
+  }
+
+  async scrollMediumImpactIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.mediumImpact));
   }
 
   async getInnerTextRightSizeProWfmBefore(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.rightSizeProWfmBefore));
   }
 
-  async expectRightSizeProWfmBeforeVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.rightSizeProWfmBefore), timeoutMs, soft);
+  async expectRightSizeProWfmBeforeVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.rightSizeProWfmBefore), timeoutMs);
+  }
+
+  async expectRightSizeProWfmBeforeHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.rightSizeProWfmBefore), timeoutMs);
+  }
+
+  async expectRightSizeProWfmBeforeText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.rightSizeProWfmBefore), expected, timeoutMs);
+  }
+
+  async expectRightSizeProWfmBeforeContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.rightSizeProWfmBefore), substring, timeoutMs);
+  }
+
+  async scrollRightSizeProWfmBeforeIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.rightSizeProWfmBefore));
   }
 
   async getInnerTextSeatUtilisationIsAt(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.seatUtilisationIsAt));
   }
 
-  async expectSeatUtilisationIsAtVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.seatUtilisationIsAt), timeoutMs, soft);
+  async expectSeatUtilisationIsAtVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.seatUtilisationIsAt), timeoutMs);
+  }
+
+  async expectSeatUtilisationIsAtHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.seatUtilisationIsAt), timeoutMs);
+  }
+
+  async expectSeatUtilisationIsAtText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.seatUtilisationIsAt), expected, timeoutMs);
+  }
+
+  async expectSeatUtilisationIsAtContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.seatUtilisationIsAt), substring, timeoutMs);
+  }
+
+  async scrollSeatUtilisationIsAtIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.seatUtilisationIsAt));
   }
 
   async clickSeeUsage(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.seeUsage));
   }
 
-  async expectSeeUsageVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.seeUsage), timeoutMs, soft);
+  async doubleClickSeeUsage(): Promise<void> {
+    await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.seeUsage));
+  }
+
+  async expectSeeUsageVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.seeUsage), timeoutMs);
+  }
+
+  async expectSeeUsageHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.seeUsage), timeoutMs);
+  }
+
+  async expectSeeUsageText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.seeUsage), expected, timeoutMs);
+  }
+
+  async expectSeeUsageContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.seeUsage), substring, timeoutMs);
+  }
+
+  async scrollSeeUsageIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.seeUsage));
   }
 
   async getInnerTextOpportunity(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.opportunity));
   }
 
-  async expectOpportunityVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.opportunity), timeoutMs, soft);
+  async expectOpportunityVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.opportunity), timeoutMs);
+  }
+
+  async expectOpportunityHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.opportunity), timeoutMs);
+  }
+
+  async expectOpportunityText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.opportunity), expected, timeoutMs);
+  }
+
+  async expectOpportunityContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.opportunity), substring, timeoutMs);
+  }
+
+  async scrollOpportunityIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.opportunity));
   }
 
   async getInnerTextAcceleratePayrollInsightsAdoption(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.acceleratePayrollInsightsAdoption));
   }
 
-  async expectAcceleratePayrollInsightsAdoptionVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.acceleratePayrollInsightsAdoption), timeoutMs, soft);
+  async expectAcceleratePayrollInsightsAdoptionVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.acceleratePayrollInsightsAdoption), timeoutMs);
+  }
+
+  async expectAcceleratePayrollInsightsAdoptionHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.acceleratePayrollInsightsAdoption), timeoutMs);
+  }
+
+  async expectAcceleratePayrollInsightsAdoptionText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.acceleratePayrollInsightsAdoption), expected, timeoutMs);
+  }
+
+  async expectAcceleratePayrollInsightsAdoptionContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.acceleratePayrollInsightsAdoption), substring, timeoutMs);
+  }
+
+  async scrollAcceleratePayrollInsightsAdoptionIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.acceleratePayrollInsightsAdoption));
   }
 
   async clickSeeAdoption(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.seeAdoption));
   }
 
-  async expectSeeAdoptionVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.seeAdoption), timeoutMs, soft);
+  async doubleClickSeeAdoption(): Promise<void> {
+    await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.seeAdoption));
+  }
+
+  async expectSeeAdoptionVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.seeAdoption), timeoutMs);
+  }
+
+  async expectSeeAdoptionHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.seeAdoption), timeoutMs);
+  }
+
+  async expectSeeAdoptionText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.seeAdoption), expected, timeoutMs);
+  }
+
+  async expectSeeAdoptionContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.seeAdoption), substring, timeoutMs);
+  }
+
+  async scrollSeeAdoptionIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.seeAdoption));
   }
 
   async getInnerTextKbArticlesMatch2(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.kbArticlesMatch2));
   }
 
-  async expectKbArticlesMatch2Visible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.kbArticlesMatch2), timeoutMs, soft);
+  async expectKbArticlesMatch2Visible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.kbArticlesMatch2), timeoutMs);
+  }
+
+  async expectKbArticlesMatch2Hidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.kbArticlesMatch2), timeoutMs);
+  }
+
+  async expectKbArticlesMatch2Text(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.kbArticlesMatch2), expected, timeoutMs);
+  }
+
+  async expectKbArticlesMatch2ContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.kbArticlesMatch2), substring, timeoutMs);
+  }
+
+  async scrollKbArticlesMatch2IntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.kbArticlesMatch2));
   }
 
   async clickViewKbArticles(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.viewKbArticles));
   }
 
-  async expectViewKbArticlesVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.viewKbArticles), timeoutMs, soft);
+  async doubleClickViewKbArticles(): Promise<void> {
+    await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.viewKbArticles));
+  }
+
+  async expectViewKbArticlesVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.viewKbArticles), timeoutMs);
+  }
+
+  async expectViewKbArticlesHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.viewKbArticles), timeoutMs);
+  }
+
+  async expectViewKbArticlesText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.viewKbArticles), expected, timeoutMs);
+  }
+
+  async expectViewKbArticlesContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.viewKbArticles), substring, timeoutMs);
+  }
+
+  async scrollViewKbArticlesIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.viewKbArticles));
   }
 
   async getInnerTextAtlasRefreshesTheseSignals(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.atlasRefreshesTheseSignals));
   }
 
-  async expectAtlasRefreshesTheseSignalsVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.atlasRefreshesTheseSignals), timeoutMs, soft);
+  async expectAtlasRefreshesTheseSignalsVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.atlasRefreshesTheseSignals), timeoutMs);
+  }
+
+  async expectAtlasRefreshesTheseSignalsHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.atlasRefreshesTheseSignals), timeoutMs);
+  }
+
+  async expectAtlasRefreshesTheseSignalsText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.atlasRefreshesTheseSignals), expected, timeoutMs);
+  }
+
+  async expectAtlasRefreshesTheseSignalsContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.atlasRefreshesTheseSignals), substring, timeoutMs);
+  }
+
+  async scrollAtlasRefreshesTheseSignalsIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.atlasRefreshesTheseSignals));
   }
 
   async getInnerTextSuggestedQueries(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.suggestedQueries));
   }
 
-  async expectSuggestedQueriesVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.suggestedQueries), timeoutMs, soft);
+  async expectSuggestedQueriesVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.suggestedQueries), timeoutMs);
+  }
+
+  async expectSuggestedQueriesHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.suggestedQueries), timeoutMs);
+  }
+
+  async expectSuggestedQueriesText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.suggestedQueries), expected, timeoutMs);
+  }
+
+  async expectSuggestedQueriesContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.suggestedQueries), substring, timeoutMs);
+  }
+
+  async scrollSuggestedQueriesIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.suggestedQueries));
   }
 
   async getInnerTextTapAQueryTo(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.tapAQueryTo));
   }
 
-  async expectTapAQueryToVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.tapAQueryTo), timeoutMs, soft);
+  async expectTapAQueryToVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.tapAQueryTo), timeoutMs);
+  }
+
+  async expectTapAQueryToHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.tapAQueryTo), timeoutMs);
+  }
+
+  async expectTapAQueryToText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.tapAQueryTo), expected, timeoutMs);
+  }
+
+  async expectTapAQueryToContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.tapAQueryTo), substring, timeoutMs);
+  }
+
+  async scrollTapAQueryToIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.tapAQueryTo));
   }
 
   async clickWhyIsMyDimensions(): Promise<void> {
@@ -504,8 +1300,32 @@ export class OverviewPage {
     await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.whyIsMyDimensions));
   }
 
-  async expectWhyIsMyDimensionsVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.whyIsMyDimensions), timeoutMs, soft);
+  async expectWhyIsMyDimensionsVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.whyIsMyDimensions), timeoutMs);
+  }
+
+  async expectWhyIsMyDimensionsHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.whyIsMyDimensions), timeoutMs);
+  }
+
+  async expectWhyIsMyDimensionsEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, OverviewPage.L.whyIsMyDimensions), timeoutMs);
+  }
+
+  async expectWhyIsMyDimensionsDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, OverviewPage.L.whyIsMyDimensions), timeoutMs);
+  }
+
+  async expectWhyIsMyDimensionsText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.whyIsMyDimensions), expected, timeoutMs);
+  }
+
+  async expectWhyIsMyDimensionsContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.whyIsMyDimensions), substring, timeoutMs);
+  }
+
+  async scrollWhyIsMyDimensionsIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.whyIsMyDimensions));
   }
 
   async clickWhatAreMyHigh(): Promise<void> {
@@ -516,8 +1336,32 @@ export class OverviewPage {
     await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.whatAreMyHigh));
   }
 
-  async expectWhatAreMyHighVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.whatAreMyHigh), timeoutMs, soft);
+  async expectWhatAreMyHighVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.whatAreMyHigh), timeoutMs);
+  }
+
+  async expectWhatAreMyHighHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.whatAreMyHigh), timeoutMs);
+  }
+
+  async expectWhatAreMyHighEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, OverviewPage.L.whatAreMyHigh), timeoutMs);
+  }
+
+  async expectWhatAreMyHighDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, OverviewPage.L.whatAreMyHigh), timeoutMs);
+  }
+
+  async expectWhatAreMyHighText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.whatAreMyHigh), expected, timeoutMs);
+  }
+
+  async expectWhatAreMyHighContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.whatAreMyHigh), substring, timeoutMs);
+  }
+
+  async scrollWhatAreMyHighIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.whatAreMyHigh));
   }
 
   async clickAmIAtRisk(): Promise<void> {
@@ -528,8 +1372,32 @@ export class OverviewPage {
     await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.amIAtRisk));
   }
 
-  async expectAmIAtRiskVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.amIAtRisk), timeoutMs, soft);
+  async expectAmIAtRiskVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.amIAtRisk), timeoutMs);
+  }
+
+  async expectAmIAtRiskHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.amIAtRisk), timeoutMs);
+  }
+
+  async expectAmIAtRiskEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, OverviewPage.L.amIAtRisk), timeoutMs);
+  }
+
+  async expectAmIAtRiskDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, OverviewPage.L.amIAtRisk), timeoutMs);
+  }
+
+  async expectAmIAtRiskText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.amIAtRisk), expected, timeoutMs);
+  }
+
+  async expectAmIAtRiskContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.amIAtRisk), substring, timeoutMs);
+  }
+
+  async scrollAmIAtRiskIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.amIAtRisk));
   }
 
   async clickHowDoesTheOverdue(): Promise<void> {
@@ -540,56 +1408,192 @@ export class OverviewPage {
     await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.howDoesTheOverdue));
   }
 
-  async expectHowDoesTheOverdueVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.howDoesTheOverdue), timeoutMs, soft);
+  async expectHowDoesTheOverdueVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.howDoesTheOverdue), timeoutMs);
+  }
+
+  async expectHowDoesTheOverdueHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.howDoesTheOverdue), timeoutMs);
+  }
+
+  async expectHowDoesTheOverdueEnabled(timeoutMs = 30_000): Promise<void> {
+    await expectEnabled(webLocator(this.page, OverviewPage.L.howDoesTheOverdue), timeoutMs);
+  }
+
+  async expectHowDoesTheOverdueDisabled(timeoutMs = 30_000): Promise<void> {
+    await expectDisabled(webLocator(this.page, OverviewPage.L.howDoesTheOverdue), timeoutMs);
+  }
+
+  async expectHowDoesTheOverdueText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.howDoesTheOverdue), expected, timeoutMs);
+  }
+
+  async expectHowDoesTheOverdueContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.howDoesTheOverdue), substring, timeoutMs);
+  }
+
+  async scrollHowDoesTheOverdueIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.howDoesTheOverdue));
   }
 
   async getInnerTextUkgAssistCanMake(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.ukgAssistCanMake));
   }
 
-  async expectUkgAssistCanMakeVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.ukgAssistCanMake), timeoutMs, soft);
+  async expectUkgAssistCanMakeVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.ukgAssistCanMake), timeoutMs);
+  }
+
+  async expectUkgAssistCanMakeHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.ukgAssistCanMake), timeoutMs);
+  }
+
+  async expectUkgAssistCanMakeText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.ukgAssistCanMake), expected, timeoutMs);
+  }
+
+  async expectUkgAssistCanMakeContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.ukgAssistCanMake), substring, timeoutMs);
+  }
+
+  async scrollUkgAssistCanMakeIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.ukgAssistCanMake));
   }
 
   async getInnerTextWhatWouldYouLike(): Promise<string> {
     return getTextWhenVisible(webLocator(this.page, OverviewPage.L.whatWouldYouLike));
   }
 
-  async expectWhatWouldYouLikeVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.whatWouldYouLike), timeoutMs, soft);
+  async expectWhatWouldYouLikeVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.whatWouldYouLike), timeoutMs);
+  }
+
+  async expectWhatWouldYouLikeHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.whatWouldYouLike), timeoutMs);
+  }
+
+  async expectWhatWouldYouLikeText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.whatWouldYouLike), expected, timeoutMs);
+  }
+
+  async expectWhatWouldYouLikeContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.whatWouldYouLike), substring, timeoutMs);
+  }
+
+  async scrollWhatWouldYouLikeIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.whatWouldYouLike));
   }
 
   async clickViewOpenCases(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.viewOpenCases));
   }
 
-  async expectViewOpenCasesVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.viewOpenCases), timeoutMs, soft);
+  async doubleClickViewOpenCases(): Promise<void> {
+    await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.viewOpenCases));
+  }
+
+  async expectViewOpenCasesVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.viewOpenCases), timeoutMs);
+  }
+
+  async expectViewOpenCasesHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.viewOpenCases), timeoutMs);
+  }
+
+  async expectViewOpenCasesText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.viewOpenCases), expected, timeoutMs);
+  }
+
+  async expectViewOpenCasesContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.viewOpenCases), substring, timeoutMs);
+  }
+
+  async scrollViewOpenCasesIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.viewOpenCases));
   }
 
   async clickManageSubscriptions(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.manageSubscriptions));
   }
 
-  async expectManageSubscriptionsVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.manageSubscriptions), timeoutMs, soft);
+  async doubleClickManageSubscriptions(): Promise<void> {
+    await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.manageSubscriptions));
+  }
+
+  async expectManageSubscriptionsVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.manageSubscriptions), timeoutMs);
+  }
+
+  async expectManageSubscriptionsHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.manageSubscriptions), timeoutMs);
+  }
+
+  async expectManageSubscriptionsText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.manageSubscriptions), expected, timeoutMs);
+  }
+
+  async expectManageSubscriptionsContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.manageSubscriptions), substring, timeoutMs);
+  }
+
+  async scrollManageSubscriptionsIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.manageSubscriptions));
   }
 
   async clickDownloadInvoice(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.downloadInvoice));
   }
 
-  async expectDownloadInvoiceVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.downloadInvoice), timeoutMs, soft);
+  async doubleClickDownloadInvoice(): Promise<void> {
+    await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.downloadInvoice));
+  }
+
+  async expectDownloadInvoiceVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.downloadInvoice), timeoutMs);
+  }
+
+  async expectDownloadInvoiceHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.downloadInvoice), timeoutMs);
+  }
+
+  async expectDownloadInvoiceText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.downloadInvoice), expected, timeoutMs);
+  }
+
+  async expectDownloadInvoiceContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.downloadInvoice), substring, timeoutMs);
+  }
+
+  async scrollDownloadInvoiceIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.downloadInvoice));
   }
 
   async clickAccountProfileLink(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.accountProfileLink));
   }
 
-  async expectAccountProfileLinkVisible(timeoutMs = 30_000, soft = true): Promise<void> {
-    await expectVisible(webLocator(this.page, OverviewPage.L.accountProfileLink), timeoutMs, soft);
+  async doubleClickAccountProfileLink(): Promise<void> {
+    await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.accountProfileLink));
+  }
+
+  async expectAccountProfileLinkVisible(timeoutMs = 30_000): Promise<void> {
+    await expectVisible(webLocator(this.page, OverviewPage.L.accountProfileLink), timeoutMs);
+  }
+
+  async expectAccountProfileLinkHidden(timeoutMs = 30_000): Promise<void> {
+    await expectHidden(webLocator(this.page, OverviewPage.L.accountProfileLink), timeoutMs);
+  }
+
+  async expectAccountProfileLinkText(expected: string, timeoutMs = 30_000): Promise<void> {
+    await expectText(webLocator(this.page, OverviewPage.L.accountProfileLink), expected, timeoutMs);
+  }
+
+  async expectAccountProfileLinkContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
+    await expectContainsText(webLocator(this.page, OverviewPage.L.accountProfileLink), substring, timeoutMs);
+  }
+
+  async scrollAccountProfileLinkIntoView(): Promise<void> {
+    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.accountProfileLink));
   }
 
   async getPageTitle(): Promise<string> {
@@ -617,18 +1621,6 @@ export class OverviewPage {
 
   async longPressGoodNightEmma(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.goodNightEmma));
-  }
-
-  async expectGoodNightEmmaHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.goodNightEmma), timeoutMs);
-  }
-
-  async expectGoodNightEmmaText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.goodNightEmma), expected, timeoutMs);
-  }
-
-  async expectGoodNightEmmaContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.goodNightEmma), substring, timeoutMs);
   }
 
   async expectGoodNightEmmaValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -659,10 +1651,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.goodNightEmma), count, timeoutMs);
   }
 
-  async scrollGoodNightEmmaIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.goodNightEmma));
-  }
-
   async clickOverviewAskUkgAssist(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.overviewAskUkgAssist));
   }
@@ -673,18 +1661,6 @@ export class OverviewPage {
 
   async longPressOverviewAskUkgAssist(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.overviewAskUkgAssist));
-  }
-
-  async expectOverviewAskUkgAssistHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.overviewAskUkgAssist), timeoutMs);
-  }
-
-  async expectOverviewAskUkgAssistText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.overviewAskUkgAssist), expected, timeoutMs);
-  }
-
-  async expectOverviewAskUkgAssistContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.overviewAskUkgAssist), substring, timeoutMs);
   }
 
   async expectOverviewAskUkgAssistValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -715,10 +1691,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.overviewAskUkgAssist), count, timeoutMs);
   }
 
-  async scrollOverviewAskUkgAssistIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.overviewAskUkgAssist));
-  }
-
   async clickExpirationAhead(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.expirationAhead));
   }
@@ -729,18 +1701,6 @@ export class OverviewPage {
 
   async longPressExpirationAhead(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.expirationAhead));
-  }
-
-  async expectExpirationAheadHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.expirationAhead), timeoutMs);
-  }
-
-  async expectExpirationAheadText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.expirationAhead), expected, timeoutMs);
-  }
-
-  async expectExpirationAheadContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.expirationAhead), substring, timeoutMs);
   }
 
   async expectExpirationAheadValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -771,10 +1731,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.expirationAhead), count, timeoutMs);
   }
 
-  async scrollExpirationAheadIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.expirationAhead));
-  }
-
   async clickUkgProSubscriptionIs(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.ukgProSubscriptionIs));
   }
@@ -785,18 +1741,6 @@ export class OverviewPage {
 
   async longPressUkgProSubscriptionIs(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.ukgProSubscriptionIs));
-  }
-
-  async expectUkgProSubscriptionIsHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.ukgProSubscriptionIs), timeoutMs);
-  }
-
-  async expectUkgProSubscriptionIsText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.ukgProSubscriptionIs), expected, timeoutMs);
-  }
-
-  async expectUkgProSubscriptionIsContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.ukgProSubscriptionIs), substring, timeoutMs);
   }
 
   async expectUkgProSubscriptionIsValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -827,36 +1771,12 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.ukgProSubscriptionIs), count, timeoutMs);
   }
 
-  async scrollUkgProSubscriptionIsIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.ukgProSubscriptionIs));
-  }
-
   async longPressRenewSubscription(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.renewSubscription));
   }
 
-  async expectRenewSubscriptionHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.renewSubscription), timeoutMs);
-  }
-
-  async expectRenewSubscriptionText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.renewSubscription), expected, timeoutMs);
-  }
-
-  async expectRenewSubscriptionContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.renewSubscription), substring, timeoutMs);
-  }
-
   async expectRenewSubscriptionValue(value: string, timeoutMs = 30_000): Promise<void> {
     await expectValue(webLocator(this.page, OverviewPage.L.renewSubscription), value, timeoutMs);
-  }
-
-  async expectRenewSubscriptionEnabled(timeoutMs = 30_000): Promise<void> {
-    await expectEnabled(webLocator(this.page, OverviewPage.L.renewSubscription), timeoutMs);
-  }
-
-  async expectRenewSubscriptionDisabled(timeoutMs = 30_000): Promise<void> {
-    await expectDisabled(webLocator(this.page, OverviewPage.L.renewSubscription), timeoutMs);
   }
 
   async expectRenewSubscriptionChecked(timeoutMs = 30_000): Promise<void> {
@@ -875,10 +1795,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.renewSubscription), count, timeoutMs);
   }
 
-  async scrollRenewSubscriptionIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.renewSubscription));
-  }
-
   async clickElement(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.element));
   }
@@ -889,18 +1805,6 @@ export class OverviewPage {
 
   async longPressElement(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.element));
-  }
-
-  async expectElementHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.element), timeoutMs);
-  }
-
-  async expectElementText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.element), expected, timeoutMs);
-  }
-
-  async expectElementContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.element), substring, timeoutMs);
   }
 
   async expectElementValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -931,36 +1835,12 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.element), count, timeoutMs);
   }
 
-  async scrollElementIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.element));
-  }
-
   async longPressPreviousAlert(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.previousAlert));
   }
 
-  async expectPreviousAlertHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.previousAlert), timeoutMs);
-  }
-
-  async expectPreviousAlertText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.previousAlert), expected, timeoutMs);
-  }
-
-  async expectPreviousAlertContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.previousAlert), substring, timeoutMs);
-  }
-
   async expectPreviousAlertValue(value: string, timeoutMs = 30_000): Promise<void> {
     await expectValue(webLocator(this.page, OverviewPage.L.previousAlert), value, timeoutMs);
-  }
-
-  async expectPreviousAlertEnabled(timeoutMs = 30_000): Promise<void> {
-    await expectEnabled(webLocator(this.page, OverviewPage.L.previousAlert), timeoutMs);
-  }
-
-  async expectPreviousAlertDisabled(timeoutMs = 30_000): Promise<void> {
-    await expectDisabled(webLocator(this.page, OverviewPage.L.previousAlert), timeoutMs);
   }
 
   async expectPreviousAlertChecked(timeoutMs = 30_000): Promise<void> {
@@ -979,36 +1859,12 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.previousAlert), count, timeoutMs);
   }
 
-  async scrollPreviousAlertIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.previousAlert));
-  }
-
   async longPressNextAlert(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.nextAlert));
   }
 
-  async expectNextAlertHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.nextAlert), timeoutMs);
-  }
-
-  async expectNextAlertText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.nextAlert), expected, timeoutMs);
-  }
-
-  async expectNextAlertContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.nextAlert), substring, timeoutMs);
-  }
-
   async expectNextAlertValue(value: string, timeoutMs = 30_000): Promise<void> {
     await expectValue(webLocator(this.page, OverviewPage.L.nextAlert), value, timeoutMs);
-  }
-
-  async expectNextAlertEnabled(timeoutMs = 30_000): Promise<void> {
-    await expectEnabled(webLocator(this.page, OverviewPage.L.nextAlert), timeoutMs);
-  }
-
-  async expectNextAlertDisabled(timeoutMs = 30_000): Promise<void> {
-    await expectDisabled(webLocator(this.page, OverviewPage.L.nextAlert), timeoutMs);
   }
 
   async expectNextAlertChecked(timeoutMs = 30_000): Promise<void> {
@@ -1027,36 +1883,12 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.nextAlert), count, timeoutMs);
   }
 
-  async scrollNextAlertIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.nextAlert));
-  }
-
   async longPressCloseAlerts(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.closeAlerts));
   }
 
-  async expectCloseAlertsHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.closeAlerts), timeoutMs);
-  }
-
-  async expectCloseAlertsText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.closeAlerts), expected, timeoutMs);
-  }
-
-  async expectCloseAlertsContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.closeAlerts), substring, timeoutMs);
-  }
-
   async expectCloseAlertsValue(value: string, timeoutMs = 30_000): Promise<void> {
     await expectValue(webLocator(this.page, OverviewPage.L.closeAlerts), value, timeoutMs);
-  }
-
-  async expectCloseAlertsEnabled(timeoutMs = 30_000): Promise<void> {
-    await expectEnabled(webLocator(this.page, OverviewPage.L.closeAlerts), timeoutMs);
-  }
-
-  async expectCloseAlertsDisabled(timeoutMs = 30_000): Promise<void> {
-    await expectDisabled(webLocator(this.page, OverviewPage.L.closeAlerts), timeoutMs);
   }
 
   async expectCloseAlertsChecked(timeoutMs = 30_000): Promise<void> {
@@ -1075,36 +1907,12 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.closeAlerts), count, timeoutMs);
   }
 
-  async scrollCloseAlertsIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.closeAlerts));
-  }
-
-  async typeTextMessageUkgAssist(value: string): Promise<void> {
-    await typeTextWhenVisible(webLocator(this.page, OverviewPage.L.messageUkgAssist), value);
-  }
-
-  async expectMessageUkgAssistHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.messageUkgAssist), timeoutMs);
-  }
-
   async expectMessageUkgAssistText(expected: string, timeoutMs = 30_000): Promise<void> {
     await expectText(webLocator(this.page, OverviewPage.L.messageUkgAssist), expected, timeoutMs);
   }
 
   async expectMessageUkgAssistContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
     await expectContainsText(webLocator(this.page, OverviewPage.L.messageUkgAssist), substring, timeoutMs);
-  }
-
-  async expectMessageUkgAssistValue(value: string, timeoutMs = 30_000): Promise<void> {
-    await expectValue(webLocator(this.page, OverviewPage.L.messageUkgAssist), value, timeoutMs);
-  }
-
-  async expectMessageUkgAssistEnabled(timeoutMs = 30_000): Promise<void> {
-    await expectEnabled(webLocator(this.page, OverviewPage.L.messageUkgAssist), timeoutMs);
-  }
-
-  async expectMessageUkgAssistDisabled(timeoutMs = 30_000): Promise<void> {
-    await expectDisabled(webLocator(this.page, OverviewPage.L.messageUkgAssist), timeoutMs);
   }
 
   async expectMessageUkgAssistChecked(timeoutMs = 30_000): Promise<void> {
@@ -1115,44 +1923,16 @@ export class OverviewPage {
     await expectUnchecked(webLocator(this.page, OverviewPage.L.messageUkgAssist), timeoutMs);
   }
 
-  async expectMessageUkgAssistFocused(timeoutMs = 30_000): Promise<void> {
-    await expectFocused(webLocator(this.page, OverviewPage.L.messageUkgAssist), timeoutMs);
-  }
-
   async expectMessageUkgAssistCount(count: number, timeoutMs = 30_000): Promise<void> {
     await expectCount(webLocator(this.page, OverviewPage.L.messageUkgAssist), count, timeoutMs);
-  }
-
-  async scrollMessageUkgAssistIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.messageUkgAssist));
   }
 
   async longPressSendMessage(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.sendMessage));
   }
 
-  async expectSendMessageHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.sendMessage), timeoutMs);
-  }
-
-  async expectSendMessageText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.sendMessage), expected, timeoutMs);
-  }
-
-  async expectSendMessageContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.sendMessage), substring, timeoutMs);
-  }
-
   async expectSendMessageValue(value: string, timeoutMs = 30_000): Promise<void> {
     await expectValue(webLocator(this.page, OverviewPage.L.sendMessage), value, timeoutMs);
-  }
-
-  async expectSendMessageEnabled(timeoutMs = 30_000): Promise<void> {
-    await expectEnabled(webLocator(this.page, OverviewPage.L.sendMessage), timeoutMs);
-  }
-
-  async expectSendMessageDisabled(timeoutMs = 30_000): Promise<void> {
-    await expectDisabled(webLocator(this.page, OverviewPage.L.sendMessage), timeoutMs);
   }
 
   async expectSendMessageChecked(timeoutMs = 30_000): Promise<void> {
@@ -1171,10 +1951,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.sendMessage), count, timeoutMs);
   }
 
-  async scrollSendMessageIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.sendMessage));
-  }
-
   async clickAiSummary(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.aiSummary));
   }
@@ -1185,18 +1961,6 @@ export class OverviewPage {
 
   async longPressAiSummary(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.aiSummary));
-  }
-
-  async expectAiSummaryHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.aiSummary), timeoutMs);
-  }
-
-  async expectAiSummaryText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.aiSummary), expected, timeoutMs);
-  }
-
-  async expectAiSummaryContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.aiSummary), substring, timeoutMs);
   }
 
   async expectAiSummaryValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -1227,10 +1991,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.aiSummary), count, timeoutMs);
   }
 
-  async scrollAiSummaryIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.aiSummary));
-  }
-
   async clickBeta(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.beta));
   }
@@ -1241,18 +2001,6 @@ export class OverviewPage {
 
   async longPressBeta(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.beta));
-  }
-
-  async expectBetaHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.beta), timeoutMs);
-  }
-
-  async expectBetaText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.beta), expected, timeoutMs);
-  }
-
-  async expectBetaContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.beta), substring, timeoutMs);
   }
 
   async expectBetaValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -1283,10 +2031,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.beta), count, timeoutMs);
   }
 
-  async scrollBetaIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.beta));
-  }
-
   async clickWasThisHelpful(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.wasThisHelpful));
   }
@@ -1297,18 +2041,6 @@ export class OverviewPage {
 
   async longPressWasThisHelpful(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.wasThisHelpful));
-  }
-
-  async expectWasThisHelpfulHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.wasThisHelpful), timeoutMs);
-  }
-
-  async expectWasThisHelpfulText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.wasThisHelpful), expected, timeoutMs);
-  }
-
-  async expectWasThisHelpfulContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.wasThisHelpful), substring, timeoutMs);
   }
 
   async expectWasThisHelpfulValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -1339,36 +2071,12 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.wasThisHelpful), count, timeoutMs);
   }
 
-  async scrollWasThisHelpfulIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.wasThisHelpful));
-  }
-
   async longPressHelpful(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.helpful));
   }
 
-  async expectHelpfulHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.helpful), timeoutMs);
-  }
-
-  async expectHelpfulText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.helpful), expected, timeoutMs);
-  }
-
-  async expectHelpfulContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.helpful), substring, timeoutMs);
-  }
-
   async expectHelpfulValue(value: string, timeoutMs = 30_000): Promise<void> {
     await expectValue(webLocator(this.page, OverviewPage.L.helpful), value, timeoutMs);
-  }
-
-  async expectHelpfulEnabled(timeoutMs = 30_000): Promise<void> {
-    await expectEnabled(webLocator(this.page, OverviewPage.L.helpful), timeoutMs);
-  }
-
-  async expectHelpfulDisabled(timeoutMs = 30_000): Promise<void> {
-    await expectDisabled(webLocator(this.page, OverviewPage.L.helpful), timeoutMs);
   }
 
   async expectHelpfulChecked(timeoutMs = 30_000): Promise<void> {
@@ -1387,36 +2095,12 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.helpful), count, timeoutMs);
   }
 
-  async scrollHelpfulIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.helpful));
-  }
-
   async longPressNotHelpful(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.notHelpful));
   }
 
-  async expectNotHelpfulHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.notHelpful), timeoutMs);
-  }
-
-  async expectNotHelpfulText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.notHelpful), expected, timeoutMs);
-  }
-
-  async expectNotHelpfulContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.notHelpful), substring, timeoutMs);
-  }
-
   async expectNotHelpfulValue(value: string, timeoutMs = 30_000): Promise<void> {
     await expectValue(webLocator(this.page, OverviewPage.L.notHelpful), value, timeoutMs);
-  }
-
-  async expectNotHelpfulEnabled(timeoutMs = 30_000): Promise<void> {
-    await expectEnabled(webLocator(this.page, OverviewPage.L.notHelpful), timeoutMs);
-  }
-
-  async expectNotHelpfulDisabled(timeoutMs = 30_000): Promise<void> {
-    await expectDisabled(webLocator(this.page, OverviewPage.L.notHelpful), timeoutMs);
   }
 
   async expectNotHelpfulChecked(timeoutMs = 30_000): Promise<void> {
@@ -1435,10 +2119,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.notHelpful), count, timeoutMs);
   }
 
-  async scrollNotHelpfulIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.notHelpful));
-  }
-
   async clickAcmeCorpSAccountCarries(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.acmeCorpSAccountCarries));
   }
@@ -1449,18 +2129,6 @@ export class OverviewPage {
 
   async longPressAcmeCorpSAccountCarries(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.acmeCorpSAccountCarries));
-  }
-
-  async expectAcmeCorpSAccountCarriesHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.acmeCorpSAccountCarries), timeoutMs);
-  }
-
-  async expectAcmeCorpSAccountCarriesText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.acmeCorpSAccountCarries), expected, timeoutMs);
-  }
-
-  async expectAcmeCorpSAccountCarriesContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.acmeCorpSAccountCarries), substring, timeoutMs);
   }
 
   async expectAcmeCorpSAccountCarriesValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -1491,10 +2159,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.acmeCorpSAccountCarries), count, timeoutMs);
   }
 
-  async scrollAcmeCorpSAccountCarriesIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.acmeCorpSAccountCarries));
-  }
-
   async clickElevatedRisk(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.elevatedRisk));
   }
@@ -1505,18 +2169,6 @@ export class OverviewPage {
 
   async longPressElevatedRisk(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.elevatedRisk));
-  }
-
-  async expectElevatedRiskHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.elevatedRisk), timeoutMs);
-  }
-
-  async expectElevatedRiskText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.elevatedRisk), expected, timeoutMs);
-  }
-
-  async expectElevatedRiskContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.elevatedRisk), substring, timeoutMs);
   }
 
   async expectElevatedRiskValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -1547,10 +2199,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.elevatedRisk), count, timeoutMs);
   }
 
-  async scrollElevatedRiskIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.elevatedRisk));
-  }
-
   async clickBackgroundRisk(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.backgroundRisk));
   }
@@ -1561,18 +2209,6 @@ export class OverviewPage {
 
   async longPressBackgroundRisk(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.backgroundRisk));
-  }
-
-  async expectBackgroundRiskHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.backgroundRisk), timeoutMs);
-  }
-
-  async expectBackgroundRiskText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.backgroundRisk), expected, timeoutMs);
-  }
-
-  async expectBackgroundRiskContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.backgroundRisk), substring, timeoutMs);
   }
 
   async expectBackgroundRiskValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -1603,10 +2239,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.backgroundRisk), count, timeoutMs);
   }
 
-  async scrollBackgroundRiskIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.backgroundRisk));
-  }
-
   async clickNotYetCriticalBut(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.notYetCriticalBut));
   }
@@ -1617,18 +2249,6 @@ export class OverviewPage {
 
   async longPressNotYetCriticalBut(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.notYetCriticalBut));
-  }
-
-  async expectNotYetCriticalButHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.notYetCriticalBut), timeoutMs);
-  }
-
-  async expectNotYetCriticalButText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.notYetCriticalBut), expected, timeoutMs);
-  }
-
-  async expectNotYetCriticalButContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.notYetCriticalBut), substring, timeoutMs);
   }
 
   async expectNotYetCriticalButValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -1659,36 +2279,12 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.notYetCriticalBut), count, timeoutMs);
   }
 
-  async scrollNotYetCriticalButIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.notYetCriticalBut));
-  }
-
   async longPressSeeMore(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.seeMore));
   }
 
-  async expectSeeMoreHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.seeMore), timeoutMs);
-  }
-
-  async expectSeeMoreText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.seeMore), expected, timeoutMs);
-  }
-
-  async expectSeeMoreContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.seeMore), substring, timeoutMs);
-  }
-
   async expectSeeMoreValue(value: string, timeoutMs = 30_000): Promise<void> {
     await expectValue(webLocator(this.page, OverviewPage.L.seeMore), value, timeoutMs);
-  }
-
-  async expectSeeMoreEnabled(timeoutMs = 30_000): Promise<void> {
-    await expectEnabled(webLocator(this.page, OverviewPage.L.seeMore), timeoutMs);
-  }
-
-  async expectSeeMoreDisabled(timeoutMs = 30_000): Promise<void> {
-    await expectDisabled(webLocator(this.page, OverviewPage.L.seeMore), timeoutMs);
   }
 
   async expectSeeMoreChecked(timeoutMs = 30_000): Promise<void> {
@@ -1707,10 +2303,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.seeMore), count, timeoutMs);
   }
 
-  async scrollSeeMoreIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.seeMore));
-  }
-
   async clickSynthesisedFromPortalActivity(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.synthesisedFromPortalActivity));
   }
@@ -1721,18 +2313,6 @@ export class OverviewPage {
 
   async longPressSynthesisedFromPortalActivity(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.synthesisedFromPortalActivity));
-  }
-
-  async expectSynthesisedFromPortalActivityHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.synthesisedFromPortalActivity), timeoutMs);
-  }
-
-  async expectSynthesisedFromPortalActivityText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.synthesisedFromPortalActivity), expected, timeoutMs);
-  }
-
-  async expectSynthesisedFromPortalActivityContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.synthesisedFromPortalActivity), substring, timeoutMs);
   }
 
   async expectSynthesisedFromPortalActivityValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -1763,36 +2343,12 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.synthesisedFromPortalActivity), count, timeoutMs);
   }
 
-  async scrollSynthesisedFromPortalActivityIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.synthesisedFromPortalActivity));
-  }
-
   async longPressViewDetails(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.viewDetails));
   }
 
-  async expectViewDetailsHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.viewDetails), timeoutMs);
-  }
-
-  async expectViewDetailsText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.viewDetails), expected, timeoutMs);
-  }
-
-  async expectViewDetailsContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.viewDetails), substring, timeoutMs);
-  }
-
   async expectViewDetailsValue(value: string, timeoutMs = 30_000): Promise<void> {
     await expectValue(webLocator(this.page, OverviewPage.L.viewDetails), value, timeoutMs);
-  }
-
-  async expectViewDetailsEnabled(timeoutMs = 30_000): Promise<void> {
-    await expectEnabled(webLocator(this.page, OverviewPage.L.viewDetails), timeoutMs);
-  }
-
-  async expectViewDetailsDisabled(timeoutMs = 30_000): Promise<void> {
-    await expectDisabled(webLocator(this.page, OverviewPage.L.viewDetails), timeoutMs);
   }
 
   async expectViewDetailsChecked(timeoutMs = 30_000): Promise<void> {
@@ -1811,10 +2367,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.viewDetails), count, timeoutMs);
   }
 
-  async scrollViewDetailsIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.viewDetails));
-  }
-
   async clickCaseOpen(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.caseOpen));
   }
@@ -1825,18 +2377,6 @@ export class OverviewPage {
 
   async longPressCaseOpen(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.caseOpen));
-  }
-
-  async expectCaseOpenHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.caseOpen), timeoutMs);
-  }
-
-  async expectCaseOpenText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.caseOpen), expected, timeoutMs);
-  }
-
-  async expectCaseOpenContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.caseOpen), substring, timeoutMs);
   }
 
   async expectCaseOpenValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -1867,10 +2407,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.caseOpen), count, timeoutMs);
   }
 
-  async scrollCaseOpenIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.caseOpen));
-  }
-
   async clickHighPriorityAwaiting(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.highPriorityAwaiting));
   }
@@ -1881,18 +2417,6 @@ export class OverviewPage {
 
   async longPressHighPriorityAwaiting(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.highPriorityAwaiting));
-  }
-
-  async expectHighPriorityAwaitingHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.highPriorityAwaiting), timeoutMs);
-  }
-
-  async expectHighPriorityAwaitingText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.highPriorityAwaiting), expected, timeoutMs);
-  }
-
-  async expectHighPriorityAwaitingContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.highPriorityAwaiting), substring, timeoutMs);
   }
 
   async expectHighPriorityAwaitingValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -1923,10 +2447,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.highPriorityAwaiting), count, timeoutMs);
   }
 
-  async scrollHighPriorityAwaitingIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.highPriorityAwaiting));
-  }
-
   async clickBilling(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.billing));
   }
@@ -1937,18 +2457,6 @@ export class OverviewPage {
 
   async longPressBilling(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.billing));
-  }
-
-  async expectBillingHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.billing), timeoutMs);
-  }
-
-  async expectBillingText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.billing), expected, timeoutMs);
-  }
-
-  async expectBillingContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.billing), substring, timeoutMs);
   }
 
   async expectBillingValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -1979,10 +2487,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.billing), count, timeoutMs);
   }
 
-  async scrollBillingIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.billing));
-  }
-
   async clickOverdue(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.overdue));
   }
@@ -1993,18 +2497,6 @@ export class OverviewPage {
 
   async longPressOverdue(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.overdue));
-  }
-
-  async expectOverdueHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.overdue), timeoutMs);
-  }
-
-  async expectOverdueText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.overdue), expected, timeoutMs);
-  }
-
-  async expectOverdueContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.overdue), substring, timeoutMs);
   }
 
   async expectOverdueValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2035,10 +2527,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.overdue), count, timeoutMs);
   }
 
-  async scrollOverdueIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.overdue));
-  }
-
   async clickPastDue1(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.pastDue1));
   }
@@ -2049,18 +2537,6 @@ export class OverviewPage {
 
   async longPressPastDue1(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.pastDue1));
-  }
-
-  async expectPastDue1Hidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.pastDue1), timeoutMs);
-  }
-
-  async expectPastDue1Text(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.pastDue1), expected, timeoutMs);
-  }
-
-  async expectPastDue1ContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.pastDue1), substring, timeoutMs);
   }
 
   async expectPastDue1Value(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2091,10 +2567,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.pastDue1), count, timeoutMs);
   }
 
-  async scrollPastDue1IntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.pastDue1));
-  }
-
   async clickRenewal(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.renewal));
   }
@@ -2105,18 +2577,6 @@ export class OverviewPage {
 
   async longPressRenewal(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.renewal));
-  }
-
-  async expectRenewalHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.renewal), timeoutMs);
-  }
-
-  async expectRenewalText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.renewal), expected, timeoutMs);
-  }
-
-  async expectRenewalContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.renewal), substring, timeoutMs);
   }
 
   async expectRenewalValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2147,10 +2607,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.renewal), count, timeoutMs);
   }
 
-  async scrollRenewalIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.renewal));
-  }
-
   async clickDimensionsIn8d(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.dimensionsIn8d));
   }
@@ -2161,18 +2617,6 @@ export class OverviewPage {
 
   async longPressDimensionsIn8d(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.dimensionsIn8d));
-  }
-
-  async expectDimensionsIn8dHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.dimensionsIn8d), timeoutMs);
-  }
-
-  async expectDimensionsIn8dText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.dimensionsIn8d), expected, timeoutMs);
-  }
-
-  async expectDimensionsIn8dContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.dimensionsIn8d), substring, timeoutMs);
   }
 
   async expectDimensionsIn8dValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2203,10 +2647,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.dimensionsIn8d), count, timeoutMs);
   }
 
-  async scrollDimensionsIn8dIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.dimensionsIn8d));
-  }
-
   async clickInsightsRecommendations(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.insightsRecommendations));
   }
@@ -2217,18 +2657,6 @@ export class OverviewPage {
 
   async longPressInsightsRecommendations(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.insightsRecommendations));
-  }
-
-  async expectInsightsRecommendationsHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.insightsRecommendations), timeoutMs);
-  }
-
-  async expectInsightsRecommendationsText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.insightsRecommendations), expected, timeoutMs);
-  }
-
-  async expectInsightsRecommendationsContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.insightsRecommendations), substring, timeoutMs);
   }
 
   async expectInsightsRecommendationsValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2259,10 +2687,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.insightsRecommendations), count, timeoutMs);
   }
 
-  async scrollInsightsRecommendationsIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.insightsRecommendations));
-  }
-
   async clickPrioritisedActionsFromYour(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.prioritisedActionsFromYour));
   }
@@ -2273,18 +2697,6 @@ export class OverviewPage {
 
   async longPressPrioritisedActionsFromYour(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.prioritisedActionsFromYour));
-  }
-
-  async expectPrioritisedActionsFromYourHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.prioritisedActionsFromYour), timeoutMs);
-  }
-
-  async expectPrioritisedActionsFromYourText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.prioritisedActionsFromYour), expected, timeoutMs);
-  }
-
-  async expectPrioritisedActionsFromYourContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.prioritisedActionsFromYour), substring, timeoutMs);
   }
 
   async expectPrioritisedActionsFromYourValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2315,10 +2727,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.prioritisedActionsFromYour), count, timeoutMs);
   }
 
-  async scrollPrioritisedActionsFromYourIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.prioritisedActionsFromYour));
-  }
-
   async clickMediumImpact(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.mediumImpact));
   }
@@ -2329,18 +2737,6 @@ export class OverviewPage {
 
   async longPressMediumImpact(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.mediumImpact));
-  }
-
-  async expectMediumImpactHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.mediumImpact), timeoutMs);
-  }
-
-  async expectMediumImpactText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.mediumImpact), expected, timeoutMs);
-  }
-
-  async expectMediumImpactContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.mediumImpact), substring, timeoutMs);
   }
 
   async expectMediumImpactValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2371,10 +2767,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.mediumImpact), count, timeoutMs);
   }
 
-  async scrollMediumImpactIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.mediumImpact));
-  }
-
   async clickRightSizeProWfmBefore(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.rightSizeProWfmBefore));
   }
@@ -2385,18 +2777,6 @@ export class OverviewPage {
 
   async longPressRightSizeProWfmBefore(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.rightSizeProWfmBefore));
-  }
-
-  async expectRightSizeProWfmBeforeHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.rightSizeProWfmBefore), timeoutMs);
-  }
-
-  async expectRightSizeProWfmBeforeText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.rightSizeProWfmBefore), expected, timeoutMs);
-  }
-
-  async expectRightSizeProWfmBeforeContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.rightSizeProWfmBefore), substring, timeoutMs);
   }
 
   async expectRightSizeProWfmBeforeValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2427,10 +2807,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.rightSizeProWfmBefore), count, timeoutMs);
   }
 
-  async scrollRightSizeProWfmBeforeIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.rightSizeProWfmBefore));
-  }
-
   async clickSeatUtilisationIsAt(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.seatUtilisationIsAt));
   }
@@ -2441,18 +2817,6 @@ export class OverviewPage {
 
   async longPressSeatUtilisationIsAt(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.seatUtilisationIsAt));
-  }
-
-  async expectSeatUtilisationIsAtHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.seatUtilisationIsAt), timeoutMs);
-  }
-
-  async expectSeatUtilisationIsAtText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.seatUtilisationIsAt), expected, timeoutMs);
-  }
-
-  async expectSeatUtilisationIsAtContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.seatUtilisationIsAt), substring, timeoutMs);
   }
 
   async expectSeatUtilisationIsAtValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2483,28 +2847,8 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.seatUtilisationIsAt), count, timeoutMs);
   }
 
-  async scrollSeatUtilisationIsAtIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.seatUtilisationIsAt));
-  }
-
-  async doubleClickSeeUsage(): Promise<void> {
-    await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.seeUsage));
-  }
-
   async longPressSeeUsage(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.seeUsage));
-  }
-
-  async expectSeeUsageHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.seeUsage), timeoutMs);
-  }
-
-  async expectSeeUsageText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.seeUsage), expected, timeoutMs);
-  }
-
-  async expectSeeUsageContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.seeUsage), substring, timeoutMs);
   }
 
   async expectSeeUsageValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2535,10 +2879,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.seeUsage), count, timeoutMs);
   }
 
-  async scrollSeeUsageIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.seeUsage));
-  }
-
   async clickOpportunity(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.opportunity));
   }
@@ -2549,18 +2889,6 @@ export class OverviewPage {
 
   async longPressOpportunity(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.opportunity));
-  }
-
-  async expectOpportunityHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.opportunity), timeoutMs);
-  }
-
-  async expectOpportunityText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.opportunity), expected, timeoutMs);
-  }
-
-  async expectOpportunityContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.opportunity), substring, timeoutMs);
   }
 
   async expectOpportunityValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2591,10 +2919,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.opportunity), count, timeoutMs);
   }
 
-  async scrollOpportunityIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.opportunity));
-  }
-
   async clickAcceleratePayrollInsightsAdoption(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.acceleratePayrollInsightsAdoption));
   }
@@ -2605,18 +2929,6 @@ export class OverviewPage {
 
   async longPressAcceleratePayrollInsightsAdoption(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.acceleratePayrollInsightsAdoption));
-  }
-
-  async expectAcceleratePayrollInsightsAdoptionHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.acceleratePayrollInsightsAdoption), timeoutMs);
-  }
-
-  async expectAcceleratePayrollInsightsAdoptionText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.acceleratePayrollInsightsAdoption), expected, timeoutMs);
-  }
-
-  async expectAcceleratePayrollInsightsAdoptionContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.acceleratePayrollInsightsAdoption), substring, timeoutMs);
   }
 
   async expectAcceleratePayrollInsightsAdoptionValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2647,28 +2959,8 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.acceleratePayrollInsightsAdoption), count, timeoutMs);
   }
 
-  async scrollAcceleratePayrollInsightsAdoptionIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.acceleratePayrollInsightsAdoption));
-  }
-
-  async doubleClickSeeAdoption(): Promise<void> {
-    await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.seeAdoption));
-  }
-
   async longPressSeeAdoption(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.seeAdoption));
-  }
-
-  async expectSeeAdoptionHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.seeAdoption), timeoutMs);
-  }
-
-  async expectSeeAdoptionText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.seeAdoption), expected, timeoutMs);
-  }
-
-  async expectSeeAdoptionContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.seeAdoption), substring, timeoutMs);
   }
 
   async expectSeeAdoptionValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2699,10 +2991,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.seeAdoption), count, timeoutMs);
   }
 
-  async scrollSeeAdoptionIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.seeAdoption));
-  }
-
   async clickKbArticlesMatch2(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.kbArticlesMatch2));
   }
@@ -2713,18 +3001,6 @@ export class OverviewPage {
 
   async longPressKbArticlesMatch2(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.kbArticlesMatch2));
-  }
-
-  async expectKbArticlesMatch2Hidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.kbArticlesMatch2), timeoutMs);
-  }
-
-  async expectKbArticlesMatch2Text(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.kbArticlesMatch2), expected, timeoutMs);
-  }
-
-  async expectKbArticlesMatch2ContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.kbArticlesMatch2), substring, timeoutMs);
   }
 
   async expectKbArticlesMatch2Value(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2755,28 +3031,8 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.kbArticlesMatch2), count, timeoutMs);
   }
 
-  async scrollKbArticlesMatch2IntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.kbArticlesMatch2));
-  }
-
-  async doubleClickViewKbArticles(): Promise<void> {
-    await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.viewKbArticles));
-  }
-
   async longPressViewKbArticles(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.viewKbArticles));
-  }
-
-  async expectViewKbArticlesHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.viewKbArticles), timeoutMs);
-  }
-
-  async expectViewKbArticlesText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.viewKbArticles), expected, timeoutMs);
-  }
-
-  async expectViewKbArticlesContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.viewKbArticles), substring, timeoutMs);
   }
 
   async expectViewKbArticlesValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2807,10 +3063,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.viewKbArticles), count, timeoutMs);
   }
 
-  async scrollViewKbArticlesIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.viewKbArticles));
-  }
-
   async clickAtlasRefreshesTheseSignals(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.atlasRefreshesTheseSignals));
   }
@@ -2821,18 +3073,6 @@ export class OverviewPage {
 
   async longPressAtlasRefreshesTheseSignals(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.atlasRefreshesTheseSignals));
-  }
-
-  async expectAtlasRefreshesTheseSignalsHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.atlasRefreshesTheseSignals), timeoutMs);
-  }
-
-  async expectAtlasRefreshesTheseSignalsText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.atlasRefreshesTheseSignals), expected, timeoutMs);
-  }
-
-  async expectAtlasRefreshesTheseSignalsContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.atlasRefreshesTheseSignals), substring, timeoutMs);
   }
 
   async expectAtlasRefreshesTheseSignalsValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2863,10 +3103,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.atlasRefreshesTheseSignals), count, timeoutMs);
   }
 
-  async scrollAtlasRefreshesTheseSignalsIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.atlasRefreshesTheseSignals));
-  }
-
   async clickSuggestedQueries(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.suggestedQueries));
   }
@@ -2877,18 +3113,6 @@ export class OverviewPage {
 
   async longPressSuggestedQueries(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.suggestedQueries));
-  }
-
-  async expectSuggestedQueriesHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.suggestedQueries), timeoutMs);
-  }
-
-  async expectSuggestedQueriesText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.suggestedQueries), expected, timeoutMs);
-  }
-
-  async expectSuggestedQueriesContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.suggestedQueries), substring, timeoutMs);
   }
 
   async expectSuggestedQueriesValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2919,10 +3143,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.suggestedQueries), count, timeoutMs);
   }
 
-  async scrollSuggestedQueriesIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.suggestedQueries));
-  }
-
   async clickTapAQueryTo(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.tapAQueryTo));
   }
@@ -2933,18 +3153,6 @@ export class OverviewPage {
 
   async longPressTapAQueryTo(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.tapAQueryTo));
-  }
-
-  async expectTapAQueryToHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.tapAQueryTo), timeoutMs);
-  }
-
-  async expectTapAQueryToText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.tapAQueryTo), expected, timeoutMs);
-  }
-
-  async expectTapAQueryToContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.tapAQueryTo), substring, timeoutMs);
   }
 
   async expectTapAQueryToValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -2975,36 +3183,12 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.tapAQueryTo), count, timeoutMs);
   }
 
-  async scrollTapAQueryToIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.tapAQueryTo));
-  }
-
   async longPressWhyIsMyDimensions(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.whyIsMyDimensions));
   }
 
-  async expectWhyIsMyDimensionsHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.whyIsMyDimensions), timeoutMs);
-  }
-
-  async expectWhyIsMyDimensionsText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.whyIsMyDimensions), expected, timeoutMs);
-  }
-
-  async expectWhyIsMyDimensionsContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.whyIsMyDimensions), substring, timeoutMs);
-  }
-
   async expectWhyIsMyDimensionsValue(value: string, timeoutMs = 30_000): Promise<void> {
     await expectValue(webLocator(this.page, OverviewPage.L.whyIsMyDimensions), value, timeoutMs);
-  }
-
-  async expectWhyIsMyDimensionsEnabled(timeoutMs = 30_000): Promise<void> {
-    await expectEnabled(webLocator(this.page, OverviewPage.L.whyIsMyDimensions), timeoutMs);
-  }
-
-  async expectWhyIsMyDimensionsDisabled(timeoutMs = 30_000): Promise<void> {
-    await expectDisabled(webLocator(this.page, OverviewPage.L.whyIsMyDimensions), timeoutMs);
   }
 
   async expectWhyIsMyDimensionsChecked(timeoutMs = 30_000): Promise<void> {
@@ -3023,36 +3207,12 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.whyIsMyDimensions), count, timeoutMs);
   }
 
-  async scrollWhyIsMyDimensionsIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.whyIsMyDimensions));
-  }
-
   async longPressWhatAreMyHigh(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.whatAreMyHigh));
   }
 
-  async expectWhatAreMyHighHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.whatAreMyHigh), timeoutMs);
-  }
-
-  async expectWhatAreMyHighText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.whatAreMyHigh), expected, timeoutMs);
-  }
-
-  async expectWhatAreMyHighContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.whatAreMyHigh), substring, timeoutMs);
-  }
-
   async expectWhatAreMyHighValue(value: string, timeoutMs = 30_000): Promise<void> {
     await expectValue(webLocator(this.page, OverviewPage.L.whatAreMyHigh), value, timeoutMs);
-  }
-
-  async expectWhatAreMyHighEnabled(timeoutMs = 30_000): Promise<void> {
-    await expectEnabled(webLocator(this.page, OverviewPage.L.whatAreMyHigh), timeoutMs);
-  }
-
-  async expectWhatAreMyHighDisabled(timeoutMs = 30_000): Promise<void> {
-    await expectDisabled(webLocator(this.page, OverviewPage.L.whatAreMyHigh), timeoutMs);
   }
 
   async expectWhatAreMyHighChecked(timeoutMs = 30_000): Promise<void> {
@@ -3071,36 +3231,12 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.whatAreMyHigh), count, timeoutMs);
   }
 
-  async scrollWhatAreMyHighIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.whatAreMyHigh));
-  }
-
   async longPressAmIAtRisk(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.amIAtRisk));
   }
 
-  async expectAmIAtRiskHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.amIAtRisk), timeoutMs);
-  }
-
-  async expectAmIAtRiskText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.amIAtRisk), expected, timeoutMs);
-  }
-
-  async expectAmIAtRiskContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.amIAtRisk), substring, timeoutMs);
-  }
-
   async expectAmIAtRiskValue(value: string, timeoutMs = 30_000): Promise<void> {
     await expectValue(webLocator(this.page, OverviewPage.L.amIAtRisk), value, timeoutMs);
-  }
-
-  async expectAmIAtRiskEnabled(timeoutMs = 30_000): Promise<void> {
-    await expectEnabled(webLocator(this.page, OverviewPage.L.amIAtRisk), timeoutMs);
-  }
-
-  async expectAmIAtRiskDisabled(timeoutMs = 30_000): Promise<void> {
-    await expectDisabled(webLocator(this.page, OverviewPage.L.amIAtRisk), timeoutMs);
   }
 
   async expectAmIAtRiskChecked(timeoutMs = 30_000): Promise<void> {
@@ -3119,36 +3255,12 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.amIAtRisk), count, timeoutMs);
   }
 
-  async scrollAmIAtRiskIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.amIAtRisk));
-  }
-
   async longPressHowDoesTheOverdue(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.howDoesTheOverdue));
   }
 
-  async expectHowDoesTheOverdueHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.howDoesTheOverdue), timeoutMs);
-  }
-
-  async expectHowDoesTheOverdueText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.howDoesTheOverdue), expected, timeoutMs);
-  }
-
-  async expectHowDoesTheOverdueContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.howDoesTheOverdue), substring, timeoutMs);
-  }
-
   async expectHowDoesTheOverdueValue(value: string, timeoutMs = 30_000): Promise<void> {
     await expectValue(webLocator(this.page, OverviewPage.L.howDoesTheOverdue), value, timeoutMs);
-  }
-
-  async expectHowDoesTheOverdueEnabled(timeoutMs = 30_000): Promise<void> {
-    await expectEnabled(webLocator(this.page, OverviewPage.L.howDoesTheOverdue), timeoutMs);
-  }
-
-  async expectHowDoesTheOverdueDisabled(timeoutMs = 30_000): Promise<void> {
-    await expectDisabled(webLocator(this.page, OverviewPage.L.howDoesTheOverdue), timeoutMs);
   }
 
   async expectHowDoesTheOverdueChecked(timeoutMs = 30_000): Promise<void> {
@@ -3167,10 +3279,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.howDoesTheOverdue), count, timeoutMs);
   }
 
-  async scrollHowDoesTheOverdueIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.howDoesTheOverdue));
-  }
-
   async clickUkgAssistCanMake(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.ukgAssistCanMake));
   }
@@ -3181,18 +3289,6 @@ export class OverviewPage {
 
   async longPressUkgAssistCanMake(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.ukgAssistCanMake));
-  }
-
-  async expectUkgAssistCanMakeHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.ukgAssistCanMake), timeoutMs);
-  }
-
-  async expectUkgAssistCanMakeText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.ukgAssistCanMake), expected, timeoutMs);
-  }
-
-  async expectUkgAssistCanMakeContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.ukgAssistCanMake), substring, timeoutMs);
   }
 
   async expectUkgAssistCanMakeValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -3223,10 +3319,6 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.ukgAssistCanMake), count, timeoutMs);
   }
 
-  async scrollUkgAssistCanMakeIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.ukgAssistCanMake));
-  }
-
   async clickWhatWouldYouLike(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, OverviewPage.L.whatWouldYouLike));
   }
@@ -3237,18 +3329,6 @@ export class OverviewPage {
 
   async longPressWhatWouldYouLike(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.whatWouldYouLike));
-  }
-
-  async expectWhatWouldYouLikeHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.whatWouldYouLike), timeoutMs);
-  }
-
-  async expectWhatWouldYouLikeText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.whatWouldYouLike), expected, timeoutMs);
-  }
-
-  async expectWhatWouldYouLikeContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.whatWouldYouLike), substring, timeoutMs);
   }
 
   async expectWhatWouldYouLikeValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -3279,28 +3359,8 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.whatWouldYouLike), count, timeoutMs);
   }
 
-  async scrollWhatWouldYouLikeIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.whatWouldYouLike));
-  }
-
-  async doubleClickViewOpenCases(): Promise<void> {
-    await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.viewOpenCases));
-  }
-
   async longPressViewOpenCases(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.viewOpenCases));
-  }
-
-  async expectViewOpenCasesHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.viewOpenCases), timeoutMs);
-  }
-
-  async expectViewOpenCasesText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.viewOpenCases), expected, timeoutMs);
-  }
-
-  async expectViewOpenCasesContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.viewOpenCases), substring, timeoutMs);
   }
 
   async expectViewOpenCasesValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -3331,28 +3391,8 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.viewOpenCases), count, timeoutMs);
   }
 
-  async scrollViewOpenCasesIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.viewOpenCases));
-  }
-
-  async doubleClickManageSubscriptions(): Promise<void> {
-    await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.manageSubscriptions));
-  }
-
   async longPressManageSubscriptions(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.manageSubscriptions));
-  }
-
-  async expectManageSubscriptionsHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.manageSubscriptions), timeoutMs);
-  }
-
-  async expectManageSubscriptionsText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.manageSubscriptions), expected, timeoutMs);
-  }
-
-  async expectManageSubscriptionsContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.manageSubscriptions), substring, timeoutMs);
   }
 
   async expectManageSubscriptionsValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -3383,28 +3423,8 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.manageSubscriptions), count, timeoutMs);
   }
 
-  async scrollManageSubscriptionsIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.manageSubscriptions));
-  }
-
-  async doubleClickDownloadInvoice(): Promise<void> {
-    await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.downloadInvoice));
-  }
-
   async longPressDownloadInvoice(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.downloadInvoice));
-  }
-
-  async expectDownloadInvoiceHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.downloadInvoice), timeoutMs);
-  }
-
-  async expectDownloadInvoiceText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.downloadInvoice), expected, timeoutMs);
-  }
-
-  async expectDownloadInvoiceContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.downloadInvoice), substring, timeoutMs);
   }
 
   async expectDownloadInvoiceValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -3435,28 +3455,8 @@ export class OverviewPage {
     await expectCount(webLocator(this.page, OverviewPage.L.downloadInvoice), count, timeoutMs);
   }
 
-  async scrollDownloadInvoiceIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.downloadInvoice));
-  }
-
-  async doubleClickAccountProfileLink(): Promise<void> {
-    await doubleClickWhenVisible(webLocator(this.page, OverviewPage.L.accountProfileLink));
-  }
-
   async longPressAccountProfileLink(): Promise<void> {
     await longPressWhenVisible(webLocator(this.page, OverviewPage.L.accountProfileLink));
-  }
-
-  async expectAccountProfileLinkHidden(timeoutMs = 30_000): Promise<void> {
-    await expectHidden(webLocator(this.page, OverviewPage.L.accountProfileLink), timeoutMs);
-  }
-
-  async expectAccountProfileLinkText(expected: string, timeoutMs = 30_000): Promise<void> {
-    await expectText(webLocator(this.page, OverviewPage.L.accountProfileLink), expected, timeoutMs);
-  }
-
-  async expectAccountProfileLinkContainsText(substring: string, timeoutMs = 30_000): Promise<void> {
-    await expectContainsText(webLocator(this.page, OverviewPage.L.accountProfileLink), substring, timeoutMs);
   }
 
   async expectAccountProfileLinkValue(value: string, timeoutMs = 30_000): Promise<void> {
@@ -3485,10 +3485,6 @@ export class OverviewPage {
 
   async expectAccountProfileLinkCount(count: number, timeoutMs = 30_000): Promise<void> {
     await expectCount(webLocator(this.page, OverviewPage.L.accountProfileLink), count, timeoutMs);
-  }
-
-  async scrollAccountProfileLinkIntoView(): Promise<void> {
-    await scrollIntoViewWhenVisible(webLocator(this.page, OverviewPage.L.accountProfileLink));
   }
 
 }
