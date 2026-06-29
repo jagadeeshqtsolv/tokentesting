@@ -1,0 +1,72 @@
+{
+  "id": "um-007-pagination-next-page",
+  "testPlanId": "ba867f62-e028-444f-9d55-58bffb4a0ef9",
+  "requirementId": "12806486-6b93-422f-a030-d38607b2cdbd",
+  "suiteName": "Admin — User Management — Smoke",
+  "case": {
+    "id": "um-007-pagination-next-page",
+    "title": "Pagination shows 20 rows per page and Next navigates to next set",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Admin URL",
+        "value": "https://qa-atlas.qtsolvdev.com/admin"
+      },
+      {
+        "id": "s2",
+        "action": "tap",
+        "targetDescription": "Click Salesforce login",
+        "locatorHint": "text=Salesforce login"
+      },
+      {
+        "id": "s3",
+        "action": "waitForVisible",
+        "targetDescription": "User table visible",
+        "locatorHint": "table",
+        "value": "10000"
+      },
+      {
+        "id": "s4",
+        "action": "assertCount",
+        "targetDescription": "20 rows per page",
+        "locatorHint": "tbody tr",
+        "assertion": "20"
+      },
+      {
+        "id": "s5",
+        "action": "assertVisible",
+        "targetDescription": "Next pagination button visible",
+        "locatorHint": "button:has-text('Next')"
+      },
+      {
+        "id": "s6",
+        "action": "tap",
+        "targetDescription": "Go to next page",
+        "locatorHint": "button:has-text('Next')"
+      },
+      {
+        "id": "s7",
+        "action": "assertEnabled",
+        "targetDescription": "Previous button becomes active",
+        "locatorHint": "button:has-text('Previous')",
+        "assertion": "true"
+      },
+      {
+        "id": "s8",
+        "action": "assertVisible",
+        "targetDescription": "Table body visible on next page",
+        "locatorHint": "tbody"
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}

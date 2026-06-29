@@ -1,0 +1,66 @@
+{
+  "id": "um-006-admin-own-row-protected",
+  "testPlanId": "ba867f62-e028-444f-9d55-58bffb4a0ef9",
+  "requirementId": "12806486-6b93-422f-a030-d38607b2cdbd",
+  "suiteName": "Admin — User Management — Smoke",
+  "case": {
+    "id": "um-006-admin-own-row-protected",
+    "title": "Admin's own row has disabled access toggle with tooltip",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Admin URL",
+        "value": "https://qa-atlas.qtsolvdev.com/admin"
+      },
+      {
+        "id": "s2",
+        "action": "tap",
+        "targetDescription": "Click Salesforce login",
+        "locatorHint": "text=Salesforce login"
+      },
+      {
+        "id": "s3",
+        "action": "waitForVisible",
+        "targetDescription": "User table visible",
+        "locatorHint": "table",
+        "value": "10000"
+      },
+      {
+        "id": "s4",
+        "action": "assertVisible",
+        "targetDescription": "Disabled access toggle (admin's own row)",
+        "locatorHint": "[data-testid='access-toggle'][disabled]"
+      },
+      {
+        "id": "s5",
+        "action": "assertDisabled",
+        "targetDescription": "Toggle is non-interactive",
+        "locatorHint": "[data-testid='access-toggle'][disabled]",
+        "assertion": "true"
+      },
+      {
+        "id": "s6",
+        "action": "hover",
+        "targetDescription": "Hover disabled toggle to show tooltip",
+        "locatorHint": "[data-testid='access-toggle'][disabled]"
+      },
+      {
+        "id": "s7",
+        "action": "assertVisible",
+        "targetDescription": "Self-protection tooltip text",
+        "locatorHint": "role=tooltip",
+        "assertion": "You cannot revoke your own access."
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}

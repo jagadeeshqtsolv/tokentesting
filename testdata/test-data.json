@@ -16,5 +16,8 @@
   },
   "flow3SearchWithNoResults": {
     "typeZzznomatchInTheSearchUserInput": "zzznomatch"
+  },
+  "searchWithNoMatchesShowsEmptyStateAndHeaderRemains": {
+    "enterUnmatchedQuery": "zzznomatch"
   }
 }

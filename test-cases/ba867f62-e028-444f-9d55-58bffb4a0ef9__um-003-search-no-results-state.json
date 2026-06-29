@@ -1,0 +1,85 @@
+{
+  "id": "um-003-search-no-results-state",
+  "testPlanId": "ba867f62-e028-444f-9d55-58bffb4a0ef9",
+  "requirementId": "12806486-6b93-422f-a030-d38607b2cdbd",
+  "suiteName": "Admin — User Management — Smoke",
+  "case": {
+    "id": "um-003-search-no-results-state",
+    "title": "Search with no matches shows empty state and header remains",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Admin URL",
+        "value": "https://qa-atlas.qtsolvdev.com/admin"
+      },
+      {
+        "id": "s2",
+        "action": "tap",
+        "targetDescription": "Click Salesforce login",
+        "locatorHint": "text=Salesforce login"
+      },
+      {
+        "id": "s3",
+        "action": "waitForVisible",
+        "targetDescription": "Search user input",
+        "locatorHint": "input[placeholder='Search user']",
+        "value": "10000"
+      },
+      {
+        "id": "s4",
+        "action": "fill",
+        "targetDescription": "Enter unmatched query",
+        "locatorHint": "input[placeholder='Search user']",
+        "value": "zzznomatch"
+      },
+      {
+        "id": "s5",
+        "action": "wait",
+        "targetDescription": "Wait for real-time filter debounce",
+        "value": "500"
+      },
+      {
+        "id": "s6",
+        "action": "assertText",
+        "targetDescription": "No results message",
+        "locatorHint": "tbody td[colspan]",
+        "assertion": "No users found for 'zzznomatch'."
+      },
+      {
+        "id": "s7",
+        "action": "assertVisible",
+        "targetDescription": "Table header remains visible",
+        "locatorHint": "thead th:nth-child(1)"
+      },
+      {
+        "id": "s8",
+        "action": "clear",
+        "targetDescription": "Clear search input",
+        "locatorHint": "input[placeholder='Search user']"
+      },
+      {
+        "id": "s9",
+        "action": "wait",
+        "targetDescription": "Wait for table to repopulate",
+        "value": "300"
+      },
+      {
+        "id": "s10",
+        "action": "assertCountGreaterThan",
+        "targetDescription": "User rows visible after clearing",
+        "locatorHint": "tbody tr",
+        "assertion": "0"
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}

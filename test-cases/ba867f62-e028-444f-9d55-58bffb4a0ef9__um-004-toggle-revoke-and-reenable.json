@@ -1,0 +1,96 @@
+{
+  "id": "um-004-toggle-revoke-and-reenable",
+  "testPlanId": "ba867f62-e028-444f-9d55-58bffb4a0ef9",
+  "requirementId": "12806486-6b93-422f-a030-d38607b2cdbd",
+  "suiteName": "Admin — User Management — Smoke",
+  "case": {
+    "id": "um-004-toggle-revoke-and-reenable",
+    "title": "Revoke access with confirmation then re-enable without confirmation",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Admin URL",
+        "value": "https://qa-atlas.qtsolvdev.com/admin"
+      },
+      {
+        "id": "s2",
+        "action": "tap",
+        "targetDescription": "Click Salesforce login",
+        "locatorHint": "text=Salesforce login"
+      },
+      {
+        "id": "s3",
+        "action": "waitForVisible",
+        "targetDescription": "User table visible",
+        "locatorHint": "table",
+        "value": "10000"
+      },
+      {
+        "id": "s4",
+        "action": "tap",
+        "targetDescription": "Click ON access toggle (non-disabled)",
+        "locatorHint": "tbody tr:has([data-testid='access-toggle'][aria-checked='true']:not([disabled])) [data-testid='access-toggle']"
+      },
+      {
+        "id": "s5",
+        "action": "waitForVisible",
+        "targetDescription": "Revoke confirmation dialog title",
+        "locatorHint": "text=Revoke access?",
+        "value": "5000"
+      },
+      {
+        "id": "s6",
+        "action": "tap",
+        "targetDescription": "Confirm Revoke",
+        "locatorHint": "button:has-text('Revoke')"
+      },
+      {
+        "id": "s7",
+        "action": "waitForHidden",
+        "targetDescription": "Revoke dialog closed",
+        "locatorHint": "text=Revoke access?",
+        "value": "5000"
+      },
+      {
+        "id": "s8",
+        "action": "assertVisible",
+        "targetDescription": "At least one OFF toggle visible",
+        "locatorHint": "[data-testid='access-toggle'][aria-checked='false']"
+      },
+      {
+        "id": "s9",
+        "action": "tap",
+        "targetDescription": "Click OFF access toggle to re-enable (non-disabled)",
+        "locatorHint": "tbody tr:has([data-testid='access-toggle'][aria-checked='false']:not([disabled])) [data-testid='access-toggle']"
+      },
+      {
+        "id": "s10",
+        "action": "wait",
+        "targetDescription": "Wait for immediate toggle change",
+        "value": "200"
+      },
+      {
+        "id": "s11",
+        "action": "assertHidden",
+        "targetDescription": "No confirmation dialog on enable",
+        "locatorHint": "text=Revoke access?"
+      },
+      {
+        "id": "s12",
+        "action": "assertVisible",
+        "targetDescription": "An ON toggle is visible",
+        "locatorHint": "[data-testid='access-toggle'][aria-checked='true']"
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}

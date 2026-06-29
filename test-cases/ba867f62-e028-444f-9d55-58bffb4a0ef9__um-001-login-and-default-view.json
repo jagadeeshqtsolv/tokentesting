@@ -1,0 +1,129 @@
+{
+  "id": "um-001-login-and-default-view",
+  "testPlanId": "ba867f62-e028-444f-9d55-58bffb4a0ef9",
+  "requirementId": "12806486-6b93-422f-a030-d38607b2cdbd",
+  "suiteName": "Admin — User Management — Smoke",
+  "case": {
+    "id": "um-001-login-and-default-view",
+    "title": "Login and verify default User Management view with tabs, header, and table columns",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Admin URL",
+        "value": "https://qa-atlas.qtsolvdev.com/admin"
+      },
+      {
+        "id": "s2",
+        "action": "tap",
+        "targetDescription": "Click Salesforce login",
+        "locatorHint": "text=Salesforce login"
+      },
+      {
+        "id": "s3",
+        "action": "waitForVisible",
+        "targetDescription": "User Management tab",
+        "locatorHint": "[role=tab][name='User Management']",
+        "value": "10000"
+      },
+      {
+        "id": "s4",
+        "action": "assertSelected",
+        "targetDescription": "User Management tab is active",
+        "locatorHint": "[role=tab][name='User Management']",
+        "assertion": "true"
+      },
+      {
+        "id": "s5",
+        "action": "assertText",
+        "targetDescription": "Tab 1 text",
+        "locatorHint": "[role=tablist] > *:nth-child(1) [role=tab]",
+        "assertion": "User Management"
+      },
+      {
+        "id": "s6",
+        "action": "assertText",
+        "targetDescription": "Tab 2 text",
+        "locatorHint": "[role=tablist] > *:nth-child(2) [role=tab]",
+        "assertion": "Roles & Access"
+      },
+      {
+        "id": "s7",
+        "action": "assertText",
+        "targetDescription": "Tab 3 text",
+        "locatorHint": "[role=tablist] > *:nth-child(3) [role=tab]",
+        "assertion": "Audit Log"
+      },
+      {
+        "id": "s8",
+        "action": "assertVisible",
+        "targetDescription": "Search user input",
+        "locatorHint": "input[placeholder='Search user']"
+      },
+      {
+        "id": "s9",
+        "action": "assertVisible",
+        "targetDescription": "Invite user button",
+        "locatorHint": "button:has-text('Invite user')"
+      },
+      {
+        "id": "s10",
+        "action": "assertContainsText",
+        "targetDescription": "N Users count label",
+        "locatorHint": "[data-testid='user-count-label']",
+        "assertion": "Users"
+      },
+      {
+        "id": "s11",
+        "action": "assertText",
+        "targetDescription": "Column 1 header",
+        "locatorHint": "thead th:nth-child(1)",
+        "assertion": "User information"
+      },
+      {
+        "id": "s12",
+        "action": "assertText",
+        "targetDescription": "Column 2 header",
+        "locatorHint": "thead th:nth-child(2)",
+        "assertion": "Role"
+      },
+      {
+        "id": "s13",
+        "action": "assertText",
+        "targetDescription": "Column 3 header",
+        "locatorHint": "thead th:nth-child(3)",
+        "assertion": "Status"
+      },
+      {
+        "id": "s14",
+        "action": "assertText",
+        "targetDescription": "Column 4 header",
+        "locatorHint": "thead th:nth-child(4)",
+        "assertion": "Last active"
+      },
+      {
+        "id": "s15",
+        "action": "assertText",
+        "targetDescription": "Column 5 header",
+        "locatorHint": "thead th:nth-child(5)",
+        "assertion": "Account Access"
+      },
+      {
+        "id": "s16",
+        "action": "assertCountGreaterThan",
+        "targetDescription": "At least one user row visible",
+        "locatorHint": "tbody tr",
+        "assertion": "0"
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}

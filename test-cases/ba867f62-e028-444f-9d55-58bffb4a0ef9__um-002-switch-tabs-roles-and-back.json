@@ -1,0 +1,72 @@
+{
+  "id": "um-002-switch-tabs-roles-and-back",
+  "testPlanId": "ba867f62-e028-444f-9d55-58bffb4a0ef9",
+  "requirementId": "12806486-6b93-422f-a030-d38607b2cdbd",
+  "suiteName": "Admin — User Management — Smoke",
+  "case": {
+    "id": "um-002-switch-tabs-roles-and-back",
+    "title": "Switch to Roles & Access and back to User Management",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Admin URL",
+        "value": "https://qa-atlas.qtsolvdev.com/admin"
+      },
+      {
+        "id": "s2",
+        "action": "tap",
+        "targetDescription": "Click Salesforce login",
+        "locatorHint": "text=Salesforce login"
+      },
+      {
+        "id": "s3",
+        "action": "waitForVisible",
+        "targetDescription": "User Management tab",
+        "locatorHint": "[role=tab][name='User Management']",
+        "value": "10000"
+      },
+      {
+        "id": "s4",
+        "action": "tap",
+        "targetDescription": "Click Roles & Access tab",
+        "locatorHint": "[role=tab][name='Roles & Access']"
+      },
+      {
+        "id": "s5",
+        "action": "assertSelected",
+        "targetDescription": "Roles & Access tab is active",
+        "locatorHint": "[role=tab][name='Roles & Access']",
+        "assertion": "true"
+      },
+      {
+        "id": "s6",
+        "action": "tap",
+        "targetDescription": "Back to User Management tab",
+        "locatorHint": "[role=tab][name='User Management']"
+      },
+      {
+        "id": "s7",
+        "action": "assertSelected",
+        "targetDescription": "User Management tab active again",
+        "locatorHint": "[role=tab][name='User Management']",
+        "assertion": "true"
+      },
+      {
+        "id": "s8",
+        "action": "assertVisible",
+        "targetDescription": "User table visible again",
+        "locatorHint": "table"
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}
