@@ -10,5 +10,11 @@
   },
   "changingSearchQueryResetsPaginationToPage1": {
     "type1CharacterQueryToChangeSearch": "a"
+  },
+  "flow2SearchByName": {
+    "typeTestuserinvite1InTheSearchUserInput": "testuserinvite1"
+  },
+  "flow3SearchWithNoResults": {
+    "typeZzznomatchInTheSearchUserInput": "zzznomatch"
   }
 }
