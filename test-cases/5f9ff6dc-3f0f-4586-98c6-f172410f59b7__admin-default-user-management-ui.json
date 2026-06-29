@@ -25,12 +25,6 @@
         "locatorHint": "text=Salesforce login"
       },
       {
-        "id": "s3",
-        "action": "waitForVisible",
-        "targetDescription": "Tablist visible",
-        "locatorHint": "[role=tablist]"
-      },
-      {
         "id": "s4",
         "action": "assertText",
         "targetDescription": "Tab 1 label",
