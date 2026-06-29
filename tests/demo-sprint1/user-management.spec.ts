@@ -4,7 +4,7 @@ import testData from '@testdata/test-data.json';
 
 test('Admin /admin loads with User Management as default, tabs in order, header and columns render', { tag: ["@smoke","@regression","@P0","@admin-default-user-management-ui"] }, async ({ page, loginPage, userManagementPage }) => {
   await test.step('Open — Navigate to Admin', async () => {
-    await page.goto(env.baseURL + '/admin');
+    await page.goto(env.baseURL);
   });
   await test.step('Click — Salesforce login button', async () => {
     await loginPage.clickLoginWithSalesforce();
